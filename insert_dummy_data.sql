@@ -43,7 +43,6 @@ VALUES
 	('VIP', 30000, 30, '20220604', 2),
 	('VIP+', 80000, 365, '20220604', 3)
 	
-	
 --member
 INSERT INTO Member (nama, email, telp, alamat, status_keanggotaan, id_kota, id_pengguna)
 VALUES
@@ -63,7 +62,7 @@ VALUES
 	('Thriller')
 
 --artikel (is_premium 2 --> VIP, 3 --> VIP+)
-INSERT INTO Artikel (is_premium, path_artikel, status_validasi, tanggal_tulis, id_penulis, id_admin)
+INSERT INTO Artikel (is_premium, nama_artikel, path_artikel, status_validasi, tanggal_tulis, id_penulis, id_admin)
 VALUES
 	(1, 'Penjelajahan Pulau X', 'C:\Users\LENOVO\Downloads\TubesTBD\1.pdf', 1, '20220601', 4, 1),
 	(1, 'Teka-teki Cinta', 'C:\Users\LENOVO\Downloads\TubesTBD\2.pdf', 0, '20220603', 5, 1),
