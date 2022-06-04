@@ -6,7 +6,7 @@ GO
 
 USE Perpustakaan
 
-DROP TABLE Artikel_Kategori, Transaksi_Keanggotaan, Keanggotaan, Membaca, Favorit, Review, Artikel, Kategori, Administrator, Member, Pengguna, Kota, Negara
+--DROP TABLE Artikel_Kategori, Transaksi_Keanggotaan, Membaca, Favorit, Review, Artikel, Kategori, Member, Keanggotaan, Administrator, Pengguna, Kota, Negara
 
 IF NOT EXISTS (SELECT * FROM sys.tables WHERE name = 'Negara')
 BEGIN
@@ -40,6 +40,31 @@ BEGIN
 END
 GO
 
+IF NOT EXISTS (SELECT * FROM sys.tables WHERE name = 'Administrator')
+BEGIN
+	 CREATE TABLE Administrator
+	 (
+		  id_admin INT NOT NULL IDENTITY(1,1) PRIMARY KEY,
+		  nama VARCHAR(255) NOT NULL,
+		  id_pengguna INT FOREIGN KEY REFERENCES Pengguna(id_pengguna)
+	 )
+END
+GO
+
+IF NOT EXISTS (SELECT * FROM sys.tables WHERE name = 'Keanggotaan')
+BEGIN
+	 CREATE TABLE Keanggotaan
+	 (
+		  id_keanggotaan INT NOT NULL IDENTITY(1,1) PRIMARY KEY,
+		  nama_keanggotaan VARCHAR(255) NOT NULL,
+		  harga INT NOT NULL,
+		  durasi_hari INT NOT NULL,
+		  tanggal_berlaku DATE NOT NULL,
+		  id_admin INT FOREIGN KEY REFERENCES Administrator(id_admin)
+	 )
+END
+GO
+
 IF NOT EXISTS (SELECT * FROM sys.tables WHERE name = 'Member')
 BEGIN
 	 CREATE TABLE Member
@@ -49,19 +74,8 @@ BEGIN
 		  email VARCHAR(255) NOT NULL,
 		  telp VARCHAR(255) NOT NULL,
 		  alamat VARCHAR(255) NOT NULL,
-		  status_keanggotaan INT NOT NULL,
+		  status_keanggotaan INT FOREIGN KEY REFERENCES Keanggotaan(id_keanggotaan),
 		  id_kota INT FOREIGN KEY REFERENCES Kota(id_kota),
-		  id_pengguna INT FOREIGN KEY REFERENCES Pengguna(id_pengguna)
-	 )
-END
-GO
-
-IF NOT EXISTS (SELECT * FROM sys.tables WHERE name = 'Administrator')
-BEGIN
-	 CREATE TABLE Administrator
-	 (
-		  id_admin INT NOT NULL IDENTITY(1,1) PRIMARY KEY,
-		  nama VARCHAR(255) NOT NULL,
 		  id_pengguna INT FOREIGN KEY REFERENCES Pengguna(id_pengguna)
 	 )
 END
@@ -83,6 +97,7 @@ BEGIN
 	 (
 		  id_artikel INT NOT NULL IDENTITY(1,1) PRIMARY KEY,
 		  is_premium INT NOT NULL,
+		  nama_artikel VARCHAR(255) NOT NULL,
 		  path_artikel VARCHAR(500) NOT NULL,
 		  status_validasi INT NOT NULL,
 		  tanggal_tulis DATE NOT NULL,
@@ -126,20 +141,6 @@ BEGIN
 		  tanggal_baca DATE NOT NULL,
 		  id_member INT FOREIGN KEY REFERENCES Member(id_member),
 		  id_artikel INT FOREIGN KEY REFERENCES Artikel(id_artikel)
-	 )
-END
-GO
-
-IF NOT EXISTS (SELECT * FROM sys.tables WHERE name = 'Keanggotaan')
-BEGIN
-	 CREATE TABLE Keanggotaan
-	 (
-		  id_keanggotaan INT NOT NULL IDENTITY(1,1) PRIMARY KEY,
-		  nama_keanggotaan VARCHAR(255) NOT NULL,
-		  harga INT NOT NULL,
-		  durasi_hari INT NOT NULL,
-		  tanggal_berlaku DATE NOT NULL,
-		  id_admin INT FOREIGN KEY REFERENCES Administrator(id_admin)
 	 )
 END
 GO
