@@ -46,11 +46,6 @@ BEGIN
 	 (
 		  id_admin INT NOT NULL IDENTITY(1,1) PRIMARY KEY,
 		  nama VARCHAR(255) NOT NULL,
-		  email VARCHAR(255) NOT NULL,
-		  telp VARCHAR(255) NOT NULL,
-		  alamat VARCHAR(255) NOT NULL,
-		  status_keanggotaan INT NOT NULL,
-		  id_kota INT FOREIGN KEY REFERENCES Kota(id_kota),
 		  id_pengguna INT FOREIGN KEY REFERENCES Pengguna(id_pengguna)
 	 )
 END
