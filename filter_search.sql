@@ -56,8 +56,8 @@ IF (@penulis IS NOT NULL) BEGIN
     END
 END
 
-PRINT @query
 EXEC sp_executesql @query
+select * from @filtered_artikel
 
 GO
 EXEC pencarian_artikel 'vincent,k,nadia','judul','0'

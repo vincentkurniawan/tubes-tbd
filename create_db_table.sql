@@ -6,7 +6,7 @@ GO
 
 USE Perpustakaan
 
---DROP TABLE Artikel_Kategori, Transaksi_Keanggotaan, Membaca, Favorit, Review, Artikel, Kategori, Member, Keanggotaan, Administrator, Pengguna, Kota, Negara
+DROP TABLE Artikel_Kategori, Transaksi_Keanggotaan, Membaca, Favorit, Review, Artikel, Kategori, Member, Keanggotaan, Administrator, Pengguna, Kota, Negara
 
 IF NOT EXISTS (SELECT * FROM sys.tables WHERE name = 'Negara')
 BEGIN
