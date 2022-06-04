@@ -6,7 +6,6 @@ USE Perpustakaan
 
 DROP TABLE Artikel_Kategori, Transaksi_Keanggotaan, Keanggotaan, Membaca, Favorit, Review, Artikel, Kategori, Administrator, Member, Pengguna, Kota, Negara
 
-
 CREATE TABLE Negara
 (
     id_negara INT NOT NULL IDENTITY(1,1) PRIMARY KEY,
