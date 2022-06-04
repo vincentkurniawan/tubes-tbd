@@ -1,6 +1,9 @@
--- DROP DATABASE Perpustakaan
+IF NOT EXISTS (SELECT * FROM sys.databases WHERE name = 'Perpustakaan')
+BEGIN
+  CREATE DATABASE Perpustakaan;
+END
+GO
 
--- CREATE DATABASE Perpustakaan
 
 USE Perpustakaan
 
