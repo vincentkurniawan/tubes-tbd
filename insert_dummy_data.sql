@@ -1,3 +1,4 @@
+USE Perpustakaan
 --negara
 INSERT INTO Negara (nama_negara) 
 VALUES 
@@ -64,42 +65,42 @@ VALUES
 --artikel (is_premium 2 --> VIP, 3 --> VIP+)
 INSERT INTO Artikel (is_premium, nama_artikel, path_artikel, status_validasi, tanggal_tulis, id_penulis, id_admin)
 VALUES
-	(1, 'Penjelajahan Pulau X', 'C:\Users\LENOVO\Downloads\TubesTBD\1.pdf', 1, '20220601', 4, 1),
-	(1, 'Teka-teki Cinta', 'C:\Users\LENOVO\Downloads\TubesTBD\2.pdf', 0, '20220603', 5, 1),
-	(1, 'Rusak Buku Ini', 'C:\Users\LENOVO\Downloads\TubesTBD\3.pdf', 1, '20220602', 6, 2),
-	(2, 'Chicken Soup', 'C:\Users\LENOVO\Downloads\TubesTBD\4.pdf', 1, '20220401', 5, 3),
-	(3, 'The Secret History of The World', 'C:\Users\LENOVO\Downloads\TubesTBD\5.pdf', 1, '20220402', 5, 2),
-	(3, '101 How to Cook', 'C:\Users\LENOVO\Downloads\TubesTBD\6.pdf', 0, '20220523', 4, 3)
+	(1, 'Penjelajahan Pulau X', 'C:\Users\LENOVO\Downloads\TubesTBD\1.pdf', 1, '20220601', 1, 1),
+	(1, 'Teka-teki Cinta', 'C:\Users\LENOVO\Downloads\TubesTBD\2.pdf', 0, '20220603', 2, 1),
+	(1, 'Rusak Buku Ini', 'C:\Users\LENOVO\Downloads\TubesTBD\3.pdf', 1, '20220602', 3, 2),
+	(2, 'Chicken Soup', 'C:\Users\LENOVO\Downloads\TubesTBD\4.pdf', 1, '20220401', 2, 3),
+	(3, 'The Secret History of The World', 'C:\Users\LENOVO\Downloads\TubesTBD\5.pdf', 1, '20220402', 2, 2),
+	(3, '101 How to Cook', 'C:\Users\LENOVO\Downloads\TubesTBD\6.pdf', 0, '20220523', 1, 3)
 
 --review
 INSERT INTO Review (komentar, rating, tanggal_review, id_member, id_artikel) 
 VALUES
-	('Artikel ini memiliki konten yang menarik dan cukup berbobot.', 4, '20220602', 5, 1),
-	('Tidak jelas, masa buku disuruh dirusak sih :(', 1, '20220604', 4, 3),
-	('Terharu saia bacanya hiks :" emejing', 5, '20220602', 6, 4)
+	('Artikel ini memiliki konten yang menarik dan cukup berbobot.', 4, '20220602', 2, 1),
+	('Tidak jelas, masa buku disuruh dirusak sih :(', 1, '20220604', 1, 3),
+	('Terharu saia bacanya hiks :" emejing', 5, '20220602', 3, 4)
 
 --favorit
 INSERT INTO Favorit (tanggal_favorit, id_member, id_artikel)
 VALUES
-	('20220602', 5, 1),
-	('20220604', 6, 1),
-	('20220602', 6, 4),
-	('20220603', 5, 4)
+	('20220602', 2, 1),
+	('20220604', 3, 1),
+	('20220602', 3, 4),
+	('20220603', 2, 4)
 
 --membaca
 INSERT INTO Membaca (tanggal_baca, id_member, id_artikel) 
 VALUES
-	('20220602', 5, 1),
-	('20220603', 5, 4),
-	('20220604', 4, 3),
-	('20220604', 6, 1),
-	('20220602', 6, 4)
+	('20220602', 2, 1),
+	('20220603', 2, 4),
+	('20220604', 1, 3),
+	('20220604', 3, 1),
+	('20220602', 3, 4)
 
 --transaksi_keanggotaan
 INSERT INTO Transaksi_Keanggotaan (harga_transaksi, tanggal_transaksi, id_member, id_admin, id_keanggotaan)
 VALUES 
-	(30000, '20220524', 5, 2, 2),
-	(80000, '20220526', 6, 3, 3)
+	(30000, '20220524', 2, 2, 2),
+	(80000, '20220526', 3, 3, 3)
 	
 
 --artikel_kategori
