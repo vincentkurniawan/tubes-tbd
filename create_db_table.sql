@@ -6,6 +6,8 @@ GO
 
 USE Perpustakaan
 
+DROP TABLE Artikel_Kategori, Transaksi_Keanggotaan, Keanggotaan, Membaca, Favorit, Review, Artikel, Kategori, Administrator, Member, Pengguna, Kota, Negara
+
 IF NOT EXISTS (SELECT * FROM sys.tables WHERE name = 'Negara')
 BEGIN
 	 CREATE TABLE Negara
@@ -49,7 +51,7 @@ BEGIN
 		  alamat VARCHAR(255) NOT NULL,
 		  status_keanggotaan INT NOT NULL,
 		  id_kota INT FOREIGN KEY REFERENCES Kota(id_kota),
-		  fk_id_pengguna INT FOREIGN KEY REFERENCES Pengguna(id_pengguna)
+		  id_pengguna INT FOREIGN KEY REFERENCES Pengguna(id_pengguna)
 	 )
 END
 GO
@@ -60,7 +62,7 @@ BEGIN
 	 (
 		  id_admin INT NOT NULL IDENTITY(1,1) PRIMARY KEY,
 		  nama VARCHAR(255) NOT NULL,
-		  fk_id_pengguna INT FOREIGN KEY REFERENCES Pengguna(id_pengguna)
+		  id_pengguna INT FOREIGN KEY REFERENCES Pengguna(id_pengguna)
 	 )
 END
 GO
@@ -84,7 +86,7 @@ BEGIN
 		  path_artikel VARCHAR(500) NOT NULL,
 		  status_validasi INT NOT NULL,
 		  tanggal_tulis DATE NOT NULL,
-		  id_member INT FOREIGN KEY REFERENCES Member(id_member),
+		  id_penulis INT FOREIGN KEY REFERENCES Member(id_member),
 		  id_admin INT FOREIGN KEY REFERENCES Administrator(id_admin)
 	 )
 END
@@ -150,7 +152,8 @@ BEGIN
 		  harga_transaksi INT NOT NULL,
 		  tanggal_transaksi DATE NOT NULL,
 		  id_member INT FOREIGN KEY REFERENCES Member(id_member),
-		  id_admin INT FOREIGN KEY REFERENCES Administrator(id_admin)
+		  id_admin INT FOREIGN KEY REFERENCES Administrator(id_admin), 
+		  id_keanggotaan INT FOREIGN KEY REFERENCES Keanggotaan(id_keanggotaan)
 	 )
 END
 GO
@@ -164,5 +167,3 @@ BEGIN
 	 )
 END
 GO
-
---DROP TABLE Artikel_Kategori, Transaksi_Keanggotaan, Keanggotaan, Membaca, Favorit, Review, Artikel, Kategori, Administrator, Member, Pengguna, Kota, Negara
