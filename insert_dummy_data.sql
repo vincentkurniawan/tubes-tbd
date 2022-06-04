@@ -1,3 +1,4 @@
+USE Perpustakaan
 --negara
 INSERT INTO Negara (nama_negara) 
 VALUES 
@@ -63,7 +64,7 @@ VALUES
 	('Thriller')
 
 --artikel (is_premium 2 --> VIP, 3 --> VIP+)
-INSERT INTO Artikel (is_premium, path_artikel, status_validasi, tanggal_tulis, id_penulis, id_admin)
+INSERT INTO Artikel (is_premium, nama_artikel, path_artikel, status_validasi, tanggal_tulis, id_penulis, id_admin)
 VALUES
 	(1, 'Penjelajahan Pulau X', 'C:\Users\LENOVO\Downloads\TubesTBD\1.pdf', 1, '20220601', 4, 1),
 	(1, 'Teka-teki Cinta', 'C:\Users\LENOVO\Downloads\TubesTBD\2.pdf', 0, '20220603', 5, 1),
@@ -117,3 +118,6 @@ VALUES
 	(5, 6),
 	(5, 7),
 	(6, 3)
+
+SELECT *
+FROM Member
