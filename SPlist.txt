@@ -21,7 +21,7 @@ param : path pdf artikel, status keanggotaan penulis, tanggal_tulis, nama_artike
 todo  : insert entry baru ke dalam tabel Artikel berdasarkan param yang telah diperoleh, dengan status_validasi 0 dan id admin validator 0 (default)
 return: true jika artikel berhasil diinsert
 
-- Admin_Validasi_Artikel_Baru
+- Admin_Validasi_Artikel_Baru (ON GOING BY K)
 param : id_artikel yang divalidasi, id_admin, status_validasi yang diterima dari interface (bayangin aja ada)
 todo  : cari artikel berdasarkan id yang dimaksud, update value id admin & status validasinya berdasarkan parameter yg diterima.
 return: -
