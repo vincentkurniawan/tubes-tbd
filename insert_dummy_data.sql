@@ -97,10 +97,10 @@ VALUES
 	('20220602', 3, 4)
 
 --transaksi_keanggotaan
-INSERT INTO Transaksi_Keanggotaan (harga_transaksi, tanggal_transaksi, id_member, id_admin, id_keanggotaan)
+INSERT INTO Transaksi_Keanggotaan (harga_transaksi, tanggal_transaksi, status_validasi, id_member, id_admin, id_keanggotaan)
 VALUES 
-	(30000, '20220524', 2, 2, 2),
-	(80000, '20220526', 3, 3, 3)
+	(30000, '20220524', 0, 2, 2, 2),
+	(80000, '20220526', 1, 3, 3, 3)
 	
 
 --artikel_kategori

@@ -152,6 +152,7 @@ BEGIN
 		  id_transaksi INT NOT NULL IDENTITY(1,1) PRIMARY KEY,
 		  harga_transaksi INT NOT NULL,
 		  tanggal_transaksi DATE NOT NULL,
+		  status_validasi INT NOT NULL,
 		  id_member INT FOREIGN KEY REFERENCES Member(id_member),
 		  id_admin INT FOREIGN KEY REFERENCES Administrator(id_admin), 
 		  id_keanggotaan INT FOREIGN KEY REFERENCES Keanggotaan(id_keanggotaan)
