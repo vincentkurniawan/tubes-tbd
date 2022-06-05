@@ -16,7 +16,7 @@ param : uname, pass, nama, email, no telp, alamat.
 todo  : cek apakah uname, email sdh prnh digunakan sblmnya. if belum pernah, insert data ke tabel Pengguna lalu ke tabel Member baru 
 return: true jika blm prnh digunakan, false jika sudah.
 
-- Member_Tulis_Artikel (ON GOING BY K)
+- Member_Tulis_Artikel (DONE)
 param : path pdf artikel, status keanggotaan penulis, tanggal_tulis, nama_artikel, id penulis
 todo  : insert entry baru ke dalam tabel Artikel berdasarkan param yang telah diperoleh, dengan status_validasi 0 dan id admin validator 0 (default)
 return: true jika artikel berhasil diinsert
