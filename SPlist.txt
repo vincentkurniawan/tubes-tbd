@@ -1,17 +1,17 @@
 Daftar seluruh SP yg dibutuhkan :
 **correct me if im wrong :)
 
-- Member_Filter_Artikel
-param :  
-todo  :
-return:
+- Member_Filter_Artikel (DONE)
+param : TODO
+todo  : TODO
+return: TODO
 
-- Member_Admin_Login 
+- Member_Admin_Login (ON GOING BY VINCENT)
 param : uname & pass
 todo  : cari entry yg mengandung uname & pass tsb)
 return: true jika login berhasil, false sebaliknya
 
-- Member_Register 
+- Member_Register (ON GOING BY VINCENT)
 param : uname, pass, nama, email, no telp, alamat. 
 todo  : cek apakah uname, email sdh prnh digunakan sblmnya. if belum pernah, insert data ke tabel Pengguna lalu ke tabel Member baru 
 return: true jika blm prnh digunakan, false jika sudah.
