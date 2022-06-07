@@ -41,7 +41,7 @@ param : id_member, id_artikel, tanggal_favorit
 todo  : cek apakah id_member tsb sdh pernah memfavoritkan artikel dengan id_artikel tsb? kalau belum, insert new entry di tabel favorit, sedangkan kalau sudah, cari entry di tabel favorit yang memiliki id member dan id artikel sesuai dengan yg di parameter, lalu hapus entrynya.
 return: true jika berhasil difavoritkan, dan false jika berhasil di non-favoritkan
 
-- Member_Transaksi_Keanggotaan
+- Member_Transaksi_Keanggotaan (K)
 param : id_member, id_keanggotaan, tanggal_transaksi
 todo  : insert ke tabel Transaksi, dengan id admin yg memvalidasi di set default 0 (nantinya akan diupdate saat divalidasi) dan status validasi = 0. 
 return: -
