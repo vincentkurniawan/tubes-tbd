@@ -26,12 +26,12 @@ param : id_artikel yang divalidasi, id_admin, status_validasi yang diterima dari
 todo  : cari artikel berdasarkan id yang dimaksud, update value id admin & status validasinya berdasarkan parameter yg diterima.
 return: -
 
-- Member_Baca_Artikel
+- Member_Baca_Artikel (TASHA) --> dicek lagi ya
 param : tanggal_baca (get current date), id_member yg membaca, dan id_artikel yg dipilih untuk dibaca
 todo  : insert entry ke tabel membaca artikel (log baca)
 return: - / isi log baca artikel
 
-- Member_Review_Artikel 
+- Member_Review_Artikel (TASHA) --> dicek lagi ya
 param : id_member, id_artikel, tanggal review, rating, komentar
 todo  : cek apakah member dengan id tersebut sudah pernah melakukan review thd artikel dgn id_artikel di parameter? kalau sudah, brati tinggal update aja tanggal review, rating dan komentarnya. Sebaliknya kalau belum pernah, berati insert new entry di tabel Review berdasarkan parameter yang diterima
 return: - 
@@ -47,12 +47,12 @@ todo  : insert ke tabel Transaksi, dengan id admin yg memvalidasi di set default
 return: -
 **note : tabel ini akan terlihat tidak normal krn mencatat harga yg dibayarkan , tapi akan mempercepat operasi analisis (jadi gabutuh join" lagi buat cek harga keanggotaannya)
 
-- Admin_Validasi_Transaksi_Keanggotaan
+- Admin_Validasi_Transaksi_Keanggotaan (TASHA) --> dicek lagi ya
 param : id_transaksi, id_admin, status_validasi
 todo  : update entry ke-id_transaksi di tabel transaksi, berdasarkan id_admin dan status validasi yang ada di param.
 return: -
 
-- Admin_Update_Daftar_Tipe_Keanggotaan
+- Admin_Update_Daftar_Tipe_Keanggotaan (TASHA) --> dicek lagi ya
 param : keyword (apakah mau 'tambah' atau 'update'), nama_keanggotaan, harga, durasi_hari, tanggal_berlaku, id_admin
 todo  : jika tambah, maka langsung insert aja entry tipe keanggotaannya. sebaliknya kalau update, cari nama keanggotaan yang ingin di update lalu update atribut lainnya sesuai dengan param
 return: -
