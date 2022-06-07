@@ -24,4 +24,4 @@ GO
 
 --tes doang, jangan lupa ganti param sesuai isi db masing-masing.
 EXEC validasi_artikel_baru @id_artikel=14, @id_admin=1, @status_validasi=1
-SELECT * FROM artikel;
+SELECT * FROM Transaksi_Keanggotaan;
