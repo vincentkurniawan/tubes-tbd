@@ -6,13 +6,14 @@ return: - / isi log baca artikel
 */
 
 CREATE PROCEDURE member_baca_artikel (
-	@tanggal_baca DATE,
+	--@tanggal_baca DATE, -> gajadi parameter
 	@id_member INT,
 	@id_artikel INT
 )
 AS
+	DECLARE @tanggal_baca DATETIME = CONVERT(DATE, GETDATE())
 	INSERT INTO Membaca (tanggal_baca, id_member, id_artikel) 
 	VALUES (@tanggal_baca, @id_member, @id_artikel)
 GO
 
---EXEC member_baca_artikel GETDATE(), 2, 1
+EXEC member_baca_artikel 1, 6
