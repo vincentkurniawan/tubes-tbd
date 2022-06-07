@@ -52,7 +52,7 @@ param : id_transaksi, id_admin, status_validasi
 todo  : update entry ke-id_transaksi di tabel transaksi, berdasarkan id_admin dan status validasi yang ada di param.
 return: -
 
-- Admin_Update_Daftar_Tipe_Keanggotaan (TASHA) --> dicek lagi ya
+- Admin_Update_Daftar_Tipe_Keanggotaan (DONE)
 param : keyword (apakah mau 'tambah' atau 'update'), nama_keanggotaan, harga, durasi_hari, tanggal_berlaku, id_admin
 todo  : jika tambah, maka langsung insert aja entry tipe keanggotaannya. sebaliknya kalau update, cari nama keanggotaan yang ingin di update lalu update atribut lainnya sesuai dengan param
 return: -
