@@ -4,8 +4,9 @@ param : keyword (apakah mau 'tambah' atau 'update'), nama_keanggotaan, harga, du
 todo  : jika tambah, maka langsung insert aja entry tipe keanggotaannya. sebaliknya kalau update, cari nama keanggotaan yang ingin di update lalu update atribut lainnya sesuai dengan param
 return: -
 */
+--USE Perpustakaan
 
-CREATE PROCEDURE admin_update_daftar_tipe_keanggotaan (
+ALTER PROCEDURE update_keanggotaan (
 	@keyword VARCHAR(255), --tidak boleh null
 	@nama_keanggotaan VARCHAR(255), --tidak boleh null
 	@harga INT,
@@ -24,16 +25,17 @@ AS
 		IF (@harga IS NOT NULL) 
 		BEGIN
 			UPDATE Keanggotaan
-			SET harga = @harga, tanggal_berlaku = @tanggal_berlaku
+			SET harga = @harga, tanggal_berlaku = @tanggal_berlaku, id_admin = @id_admin
 			WHERE nama_keanggotaan = @nama_keanggotaan
 		END
 
 		IF (@durasi_hari IS NOT NULL) BEGIN
 			UPDATE Keanggotaan
-			SET durasi_hari = @durasi_hari, tanggal_berlaku = @tanggal_berlaku
+			SET durasi_hari = @durasi_hari, tanggal_berlaku = @tanggal_berlaku, id_admin = @id_admin
 			WHERE nama_keanggotaan = @nama_keanggotaan
 		END
 	END
 GO
 
---EXEC admin_update_daftar_tipe_keanggotaan 1, 1, 0
+--EXEC update_keanggotaan 'Tambah', 'Premium', 100000, 730, '2022-06-07', 3
+--EXEC update_keanggotaan 'Update', 'Premium', 150000, 1000, '2022-06-07', 2

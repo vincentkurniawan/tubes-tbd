@@ -15,4 +15,6 @@ AS
 	WHERE id_transaksi = @id_transaksi
 GO
 
---EXEC admin_validasi_transaksi_keanggotaan 1, 1, 0
+--EXEC admin_validasi_transaksi_keanggotaan 1, 1, 1
+
+SELECT * FROM Transaksi_Keanggotaan
