@@ -30,12 +30,12 @@ Daftar seluruh SP yg dibutuhkan :
 - todo  : cari artikel berdasarkan id yang dimaksud, update value id admin & status validasinya berdasarkan parameter yg diterima.
 - return: -
 
-6. Member_Baca_Artikel (TASHA) --> dicek lagi ya
+6. Member_Baca_Artikel (DONE)
 - param : tanggal_baca (get current date), id_member yg membaca, dan id_artikel yg dipilih untuk dibaca
 - todo  : insert entry ke tabel membaca artikel (log baca)
 - return: - / isi log baca artikel
 
-7. Member_Review_Artikel (TASHA) --> dicek lagi ya
+7. Member_Review_Artikel (DONE)
 - param : id_member, id_artikel, tanggal review, rating, komentar
 - todo  : cek apakah member dengan id tersebut sudah pernah melakukan review thd artikel dgn id_artikel di parameter? kalau sudah, brati tinggal update aja tanggal review, rating dan komentarnya. Sebaliknya kalau belum pernah, berati insert new entry di tabel Review berdasarkan parameter yang diterima
 - return: - 
