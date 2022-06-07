@@ -4,8 +4,7 @@
 --Sebaliknya kalau belum pernah, berati insert new entry di tabel Review berdasarkan parameter yang diterima
 --return: - 
 
-/*blm dynamic*/
-CREATE PROCEDURE member_review_artikel (
+ALTER PROCEDURE member_review_artikel (
 	@id_member INT, 
 	@id_artikel INT, 
 	@tanggal_review DATE,
@@ -14,12 +13,24 @@ CREATE PROCEDURE member_review_artikel (
 )
 AS
 	DECLARE @is_favorite BIT
+	
 	IF EXISTS (SELECT * FROM Review WHERE id_member = @id_member AND id_artikel = @id_artikel)
     BEGIN
 		--update review terbaru
-		UPDATE Review
-		SET tanggal_review = @tanggal_review, rating = @rating, komentar = @komentar
-		WHERE id_member = @id_member AND id_artikel = @id_artikel
+		IF @komentar = ''
+		BEGIN
+			--Komentar ga diupdate krn review terbaru ga kasih komentar
+			UPDATE Review
+			SET tanggal_review = @tanggal_review, rating = @rating
+			WHERE id_member = @id_member AND id_artikel = @id_artikel
+		END
+		ELSE
+		BEGIN 
+			--komentar diupdate
+			UPDATE Review
+			SET tanggal_review = @tanggal_review, rating = @rating, komentar = @komentar
+			WHERE id_member = @id_member AND id_artikel = @id_artikel
+		END 
     END
     ELSE
 	BEGIN
@@ -29,4 +40,8 @@ AS
 	END
 GO
 
---EXEC member_review_artikel 'Lucu bgtzzzzz', 4, '20220602', 3, 4
+/*
+EXEC member_review_artikel 2, 5, '20220607', 4, 'Lucu bgtzzzzz'
+EXEC member_review_artikel 2, 5, '20220607', 3, ''
+EXEC member_review_artikel 2, 5, '20220607', 4, 'AHAHAHAHAH'
+*/

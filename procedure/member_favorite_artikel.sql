@@ -25,4 +25,4 @@ AS
 	END
 GO
 
-EXEC favorite_artikel 3, 4, '20220602'
+--EXEC favorite_artikel 3, 2, '20220607'
