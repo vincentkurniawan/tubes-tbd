@@ -5,7 +5,7 @@ todo  : jika tambah, maka langsung insert aja entry tipe keanggotaannya. sebalik
 return: -
 */
 
-CREATE PROCEDURE update_keanggotaan (
+CREATE PROCEDURE admin_update_daftar_tipe_keanggotaan (
 	@keyword VARCHAR(255), --tidak boleh null
 	@nama_keanggotaan VARCHAR(255), --tidak boleh null
 	@harga INT,
@@ -36,4 +36,4 @@ AS
 	END
 GO
 
---EXEC update_keanggotaan 1, 1, 0
+--EXEC admin_update_daftar_tipe_keanggotaan 1, 1, 0

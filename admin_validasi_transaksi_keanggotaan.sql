@@ -3,7 +3,7 @@
 --todo  : update entry ke-id_transaksi di tabel transaksi, berdasarkan id_admin dan status validasi yang ada di param.
 --return: -
 
-CREATE PROCEDURE validasi_transaksi (
+CREATE PROCEDURE admin_validasi_transaksi_keanggotaan (
 	@id_transaksi INT, 
 	@id_admin INT, 
 	@status_validasi INT
@@ -15,4 +15,4 @@ AS
 	WHERE id_transaksi = @id_transaksi
 GO
 
---EXEC validasi_transaksi 1, 1, 0
+--EXEC admin_validasi_transaksi_keanggotaan 1, 1, 0

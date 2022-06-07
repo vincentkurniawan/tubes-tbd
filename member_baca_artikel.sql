@@ -5,7 +5,7 @@ todo  : insert entry ke tabel membaca artikel (log baca)
 return: - / isi log baca artikel
 */
 
-CREATE PROCEDURE baca_artikel (
+CREATE PROCEDURE member_baca_artikel (
 	@tanggal_baca DATE,
 	@id_member INT,
 	@id_artikel INT
@@ -15,4 +15,4 @@ AS
 	VALUES (@tanggal_baca, @id_member, @id_artikel)
 GO
 
---EXEC baca_artikel GETDATE(), 2, 1
+--EXEC member_baca_artikel GETDATE(), 2, 1

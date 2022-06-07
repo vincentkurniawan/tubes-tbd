@@ -5,7 +5,7 @@
 --return: - 
 
 /*blm dynamic*/
-CREATE PROCEDURE review_artikel (
+CREATE PROCEDURE member_review_artikel (
 	@id_member INT, 
 	@id_artikel INT, 
 	@tanggal_review DATE,
@@ -29,4 +29,4 @@ AS
 	END
 GO
 
---EXEC review_artikel 'Lucu bgtzzzzz', 4, '20220602', 3, 4
+--EXEC member_review_artikel 'Lucu bgtzzzzz', 4, '20220602', 3, 4
