@@ -14,10 +14,6 @@ CREATE PROCEDURE update_keanggotaan (
 	@id_admin INT
 )
 AS
-	DECLARE
-	@query NVARCHAR(500) = 'SELECT * FROM dbo.Keanggotaan(',
-	@check BIT = 0
-
 	IF @keyword = 'Tambah'
 	BEGIN
 		INSERT INTO Keanggotaan (nama_keanggotaan, harga, durasi_hari, tanggal_berlaku, id_admin)
@@ -25,17 +21,18 @@ AS
 	END
 	ELSE IF @keyword = 'Update'
 	BEGIN
-		/* dynamic sql blm
-		IF (@harga IS NULL) BEGIN
-			SET @query = CONCAT (@query, 'NULL')
+		IF (@harga IS NOT NULL) 
+		BEGIN
+			UPDATE Keanggotaan
+			SET harga = @harga, tanggal_berlaku = @tanggal_berlaku
+			WHERE nama_keanggotaan = @nama_keanggotaan
 		END
-		ELSE BEGIN
-			SET @query = CONCAT (@query, '''', @harga, '''')
-		END*/
 
-		UPDATE Keanggotaan
-		SET harga = @harga, durasi_hari = @durasi_hari, tanggal_berlaku = @tanggal_berlaku, id_admin = @id_admin
-		WHERE nama_keanggotaan = @nama_keanggotaan
+		IF (@durasi_hari IS NOT NULL) BEGIN
+			UPDATE Keanggotaan
+			SET durasi_hari = @durasi_hari, tanggal_berlaku = @tanggal_berlaku
+			WHERE nama_keanggotaan = @nama_keanggotaan
+		END
 	END
 GO
 
