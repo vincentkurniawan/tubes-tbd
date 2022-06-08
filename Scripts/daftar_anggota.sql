@@ -1,17 +1,10 @@
 
-ALTER FUNCTION daftar_anggota()
-    RETURNS @DaftarAnggota TABLE (
-    	id_member int,
-    	nama varchar(255),
-    	nama_keanggotaan varchar(255)
-    )
-    BEGIN
-        INSERT INTO @DaftarAnggota
-        SELECT id_member, nama, nama_keanggotaan
-        FROM Member INNER JOIN Keanggotaan ON status_keanggotaan = id_keanggotaan
-        RETURN
-    END
+CREATE PROCEDURE daftar_anggota
+AS 
+    SELECT id_member, nama, nama_keanggotaan
+    FROM Member INNER JOIN Keanggotaan ON status_keanggotaan = id_keanggotaan
+    RETURN
     
+    
+EXEC daftar_anggota
   
-SELECT id_member, nama, nama_keanggotaan
-FROM daftar_anggota()
