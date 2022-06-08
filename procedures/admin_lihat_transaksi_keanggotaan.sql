@@ -6,7 +6,10 @@ param : id_member
 todo  : select semua transaksi keanggotaan
 return: -
 **/
+GO
+USE Perpustakaan
 
+GO
 CREATE PROCEDURE admin_lihat_transaksi_keanggotaan(
 	@id_member INT
 )
@@ -18,5 +21,6 @@ AS
 	BEGIN
 		SELECT * FROM Transaksi_Keanggotaan WHERE id_member = @id_member
 	END
+
 GO
 EXEC admin_lihat_transaksi_keanggotaan @id_member=2

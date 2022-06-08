@@ -1,5 +1,5 @@
 --Member_Update_Data (Data Register)
-
+GO
 USE Perpustakaan
 
 GO

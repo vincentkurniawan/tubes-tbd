@@ -1,4 +1,8 @@
-ALTER PROCEDURE member_lihat_log_artikel(
+GO
+USE Perpustakaan
+
+GO
+CREATE PROCEDURE member_lihat_log_artikel(
 	@id_member INT
 )
 AS
@@ -10,5 +14,6 @@ AS
 		Membaca.id_member = @id_member
 GO
 
+GO
 EXEC member_lihat_log_artikel @id_member = 1
 

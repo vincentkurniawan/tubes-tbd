@@ -6,10 +6,10 @@ param : TODO
 todo  : TODO
 return: TODO
 
-- Member_Admin_Login (ON GOING BY VINCENT)
+- Member_Admin_Login (DONE)
 param : uname & pass
 todo  : cari entry yg mengandung uname & pass tsb)
-return: true jika login berhasil, false sebaliknya
+return: 
 
 - Member_Register (DONE)
 param : uname, pass, nama, email, no telp, alamat. 

@@ -4,8 +4,11 @@ param : id_artikel yang divalidasi, id_admin, status_validasi yang diterima dari
 todo  : cari artikel berdasarkan id yang dimaksud, update value id admin & status validasinya berdasarkan parameter yg diterima.
 return: -
 **/
+GO
+USE Perpustakaan
 
-ALTER PROCEDURE validasi_artikel_baru(
+GO
+CREATE PROCEDURE validasi_artikel_baru(
 	@id_artikel INT,
 	@id_admin INT,
 	@status_validasi INT
