@@ -47,6 +47,11 @@ todo  : insert ke tabel Transaksi, dengan id admin yg memvalidasi di set default
 return: -
 **note : tabel ini akan terlihat tidak normal krn mencatat harga yg dibayarkan , tapi akan mempercepat operasi analisis (jadi gabutuh join" lagi buat cek harga keanggotaannya)
 
+- Member_lihat_daftar_artikel
+param : id_member
+todo  : select semua artikel yang pernah ditulis oleh member dengan id_member param
+return: -
+
 - Admin_Validasi_Transaksi_Keanggotaan (DONE)
 param : id_transaksi, id_admin, status_validasi
 todo  : update entry ke-id_transaksi di tabel transaksi, berdasarkan id_admin dan status validasi yang ada di param.
