@@ -2,7 +2,7 @@ GO
 USE Perpustakaan
 
 GO
-ALTER FUNCTION member_get_artikel (@id_member INT)
+CREATE FUNCTION member_get_artikel (@id_member INT)
 RETURNS @res TABLE 
 (
     id_artikel INT,

@@ -2,7 +2,7 @@ GO
 USE Perpustakaan
 
 GO
-ALTER FUNCTION get_filtered_artikel (@kategori VARCHAR(500))
+CREATE FUNCTION get_filtered_artikel (@kategori VARCHAR(500))
 RETURNS @filtered_artikel TABLE 
 (
     id_artikel INT,
@@ -33,7 +33,7 @@ BEGIN
 END
 
 GO
-ALTER PROCEDURE pencarian_artikel
+CREATE PROCEDURE pencarian_artikel
 (
     @kategori VARCHAR(500),
     @judul VARCHAR(500),
@@ -41,11 +41,9 @@ ALTER PROCEDURE pencarian_artikel
 )
 AS
 
-
 DECLARE
 @query NVARCHAR(500) = 'SELECT * FROM dbo.get_filtered_artikel(',
 @check BIT = 0
-
 
 IF (@kategori IS NULL) BEGIN
     set @query = CONCAT (@query, 'NULL')

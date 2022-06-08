@@ -4,7 +4,11 @@
 --Sebaliknya kalau belum pernah, berati insert new entry di tabel Review berdasarkan parameter yang diterima
 --return: - 
 
-ALTER PROCEDURE member_review_artikel (
+GO
+USE Perpustakaan
+
+GO
+CREATE PROCEDURE member_review_artikel (
 	@id_member INT, 
 	@id_artikel INT, 
 	@tanggal_review DATE,

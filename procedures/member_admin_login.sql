@@ -2,7 +2,7 @@ GO
 USE Perpustakaan
 
 GO
-ALTER FUNCTION validate_user_pass (@username VARCHAR(255), @pass VARCHAR(255))
+CREATE FUNCTION validate_user_pass (@username VARCHAR(255), @pass VARCHAR(255))
     RETURNS BIT
         BEGIN
             IF EXISTS (SELECT * FROM Pengguna WHERE username = @username AND pass = @pass)
@@ -25,4 +25,4 @@ AS
     WHERE   Pengguna.username = @username
 
 GO
-EXEC member_admin_login 'admin1','admin1x'
+EXEC member_admin_login 'member1','member1x'

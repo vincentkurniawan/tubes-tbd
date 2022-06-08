@@ -2,7 +2,7 @@
 --param : uname, pass, nama, email, no telp, alamat, kota. 
 --todo  : cek apakah uname, email sdh prnh digunakan sblmnya. if belum pernah, insert data ke tabel Pengguna lalu ke tabel Member baru 
 --return: true (0) jika blm prnh digunakan, false (1) jika sudah.
-
+GO
 USE Perpustakaan
 
 GO
@@ -21,7 +21,6 @@ AS
 	@id_kota INT,
 	@keanggotaan INT = 1 --Default keanggotaan Free -> 1
 
-    BEGIN
         IF EXISTS (SELECT * FROM Pengguna WHERE username = @username)
         BEGIN
             RETURN 1
@@ -49,10 +48,8 @@ AS
 			VALUES (@nama, @email, @telp, @alamat, @keanggotaan, @id_kota, @id_pengguna)
 		END
         RETURN 0
-    END
 
-/*
+GO
 EXEC register 'icepandabear', 'abcd123', 'tasha', 'tasha@gmail.com', '0721 257750', 'Jl. jalan santai', 'Tokyo'
 EXEC register 'icepandabear', 'abcd123', 'tasha', 'kopisejuk@yahoo.com', '0721 257750', 'Jl. jalan santai', 'Tokyo'
 EXEC register 'icepandabear', 'abcd123', 'Nadia Clarissa H', 'kopisejuk@yahoo.com', '0721 257750', 'Jl. jalan santai', 'Tokyo'
-*

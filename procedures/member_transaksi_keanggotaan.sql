@@ -6,8 +6,11 @@ return: -
 **note : tabel ini akan terlihat tidak normal krn mencatat harga yg dibayarkan ,
 tapi akan mempercepat operasi analisis (jadi gabutuh join" lagi buat cek harga keanggotaannya)
 **/
+GO
+USE Perpustakaan
 
-ALTER PROCEDURE member_transaksi_keanggotaan(
+GO
+CREATE PROCEDURE member_transaksi_keanggotaan(
 	@id_member INT,
 	@id_keanggotaan INT,
 	@tanggal_transaksi DATE

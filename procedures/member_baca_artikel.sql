@@ -4,7 +4,10 @@ param : tanggal_baca (get current date), id_member yg membaca, dan id_artikel yg
 todo  : insert entry ke tabel membaca artikel (log baca)
 return: - / isi log baca artikel
 */
+GO
+USE Perpustakaan
 
+GO
 CREATE PROCEDURE member_baca_artikel (
 	--@tanggal_baca DATE, -> gajadi parameter
 	@id_member INT,

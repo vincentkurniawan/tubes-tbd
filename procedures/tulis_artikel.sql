@@ -4,7 +4,11 @@
 --return: true jika artikel berhasil diinsert
 
 -- NOTE : Tanggal tulis boleh di NULL. Kalau di null in artinya pake tanggal hari ini.
-ALTER PROCEDURE tulis_artikel(
+GO
+USE Perpustakaan
+
+GO
+CREATE PROCEDURE tulis_artikel(
 	@path_artikel VARCHAR(500), --path_artikel di tabel artikel
 	@status_keanggotaan INT, --status_keanggotaan di member
 	@tanggal_tulis DATE, --tanggal tulis di artikel
