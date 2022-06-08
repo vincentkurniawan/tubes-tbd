@@ -21,33 +21,35 @@ AS
 	@id_kota INT,
 	@keanggotaan INT = 1 --Default keanggotaan Free -> 1
 
-    IF EXISTS (SELECT * FROM Pengguna WHERE username = @username)
     BEGIN
-        RETURN 1
+        IF EXISTS (SELECT * FROM Pengguna WHERE username = @username)
+        BEGIN
+            RETURN 1
+        END
+		ELSE IF EXISTS (SELECT * FROM Member WHERE email = @email)
+		BEGIN
+            RETURN 1
+        END
+		ELSE 
+		BEGIN 
+			INSERT INTO Pengguna(username, pass) 
+			VALUES (@username, @pass)
+
+			--ambil id pengguna
+			SELECT @id_pengguna = id_pengguna
+			FROM Pengguna
+			WHERE username = @username
+
+			--ambil id kota
+			SELECT @id_kota = id_kota
+			FROM Kota
+			WHERE nama_kota = @nama_kota
+
+			INSERT INTO Member(nama, email, telp, alamat, status_keanggotaan, id_kota, id_pengguna)
+			VALUES (@nama, @email, @telp, @alamat, @keanggotaan, @id_kota, @id_pengguna)
+		END
+        RETURN 0
     END
-	ELSE IF EXISTS (SELECT * FROM Member WHERE email = @email)
-	BEGIN
-        RETURN 1
-    END
-	ELSE 
-	BEGIN 
-		INSERT INTO Pengguna(username, pass) 
-		VALUES (@username, @pass)
-
-		--ambil id pengguna
-		SELECT @id_pengguna = id_pengguna
-		FROM Pengguna
-		WHERE username = @username
-
-		--ambil id kota
-		SELECT @id_kota = id_kota
-		FROM Kota
-		WHERE nama_kota = @nama_kota
-
-		INSERT INTO Member(nama, email, telp, alamat, status_keanggotaan, id_kota, id_pengguna)
-		VALUES (@nama, @email, @telp, @alamat, @keanggotaan, @id_kota, @id_pengguna)
-	END
-    RETURN 0
 
 /*
 EXEC register 'icepandabear', 'abcd123', 'tasha', 'tasha@gmail.com', '0721 257750', 'Jl. jalan santai', 'Tokyo'
