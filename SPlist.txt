@@ -61,3 +61,8 @@ return: -
 param : keyword (apakah mau 'tambah' atau 'update'), nama_keanggotaan, harga, durasi_hari, tanggal_berlaku, id_admin
 todo  : jika tambah, maka langsung insert aja entry tipe keanggotaannya. sebaliknya kalau update, cari nama keanggotaan yang ingin di update lalu update atribut lainnya sesuai dengan param
 return: -
+
+- admin_lihat_transaksi_keanggotaan
+param : id_member
+todo  : select semua transaksi keanggotaan
+return: -
