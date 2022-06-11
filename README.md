@@ -6,6 +6,7 @@ Daftar seluruh SP yg dibutuhkan :
 
 # List SP :
 **a)	SP pada stakeholder : Member**
+
 **-	Register (CREATE)**
 1.	Menerima data diri lengkap member.
 2.	Cek apakah username yang diterima sudah pernah digunakan sebelumnya di tabel Pengguna.
@@ -78,6 +79,7 @@ Daftar seluruh SP yg dibutuhkan :
 2.	Masukan entry favoritkan artikel.
 
 **b)	SP pada stakeholder : Admin**
+
 **-	Login (sama percis dengan member punya) (READ)**
 1.	Menerima username dan password .
 2.	Cek apakah usernamenya ada di tabel Pengguna.
