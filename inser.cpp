@@ -94,7 +94,11 @@ int main () {
         // string nama = user + " " + randUser(6);
         // string email = user + "@gmail.com";
         // myfile << "EXEC register '" << user << "', '" << pass << "', '" << nama << "', '" << email << "', '" << randTelp(12) << "', 'Jl. Juanda No. " << i << "', '" << randKota() << "'\n";
-        myfile << "EXEC member_transaksi_keanggotaan " << rand()%50+1 << ", " << rand()%2+2 << ", ";
+        //myfile << "EXEC member_transaksi_keanggotaan " << rand()%50+1 << ", " << rand()%2+2 << ", ";
+        int idmember = rand()%50+1;
+        int artikel =  rand()%100+1;
+        int tanggal = rand()%20220610+20200101;
+        myfile << "EXEC favorite_artikel " << idmember << ", " << artikel << ", '" << tanggal <<"'" << endl;  
     }
     myfile.close();
 }
