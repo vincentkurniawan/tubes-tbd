@@ -5,58 +5,122 @@ Daftar seluruh SP yg dibutuhkan :
 **correct me if im wrong :)
 
 # List SP :
-1. Member_Filter_Artikel (DONE)
-- param : TODO
-- todo  : TODO
-- return: TODO
+a)	SP pada stakeholder : Member
+-	Register (CREATE)
+1.	Menerima data diri lengkap member.
+2.	Cek apakah username yang diterima sudah pernah digunakan sebelumnya di tabel Pengguna.
+3.	Jika sudah pernah, return false.
+4.	Sebaliknya, masukkan username dan password ke tabel Pengguna.
+5.	Lalu, masukkan data diri lainnya ke tabel Member dengan foreign key id_pengguna yang mengarah ke primary key id_pengguna di tabel Pengguna.
 
-2. Member_Admin_Login (ON GOING BY VINCENT)
-- param : uname & pass
-- todo  : cari entry yg mengandung uname & pass tsb)
-- return: true jika login berhasil, false sebaliknya
+-	Log in (READ)
+1.	Menerima username dan password.
+2.	Cek apakah username ada di tabel Pengguna.
+3.	Jika username ada di tabel Pengguna, cek apakah passwordnya sesuai.
+4.	Jika username tidak ada di tabel Pengguna atau password salah, return false.
+5.	Sebaliknya jika username dan password tepat, return true.
 
-3. Member_Register (DONE)
-- param : uname, pass, nama, email, no telp, alamat. 
-- todo  : cek apakah uname, email sdh prnh digunakan sblmnya. if belum pernah, insert data ke tabel Pengguna lalu ke tabel Member baru 
-- return: true jika blm prnh digunakan, false jika sudah.
+-	Edit Profile (UPDATE)
+1.	Menerima data diri member (kecuali username dan password tidak bisa diganti).
+2.	Mengupdate data diri member yang ada di tabel Member sesuai dengan parameter data diri yang diterima.
 
-4. Member_Tulis_Artikel (DONE)
-- param : path pdf artikel, status keanggotaan penulis, tanggal_tulis, nama_artikel, id penulis
-- todo  : insert entry baru ke dalam tabel Artikel berdasarkan param yang telah diperoleh, dengan status_validasi 0 dan id admin validator 0 (default)
-- return: true jika artikel berhasil diinsert
+-	Melihat Status Keanggotaan Saat Ini (READ)
+1.	Menerima id_member yang ingin dilihat status keanggotaannya.
+2.	Return status_keanggotaan member tersebut dari tabel Member.
 
-5. Admin_Validasi_Artikel_Baru (ON GOING BY K)
-- param : id_artikel yang divalidasi, id_admin, status_validasi yang diterima dari interface (bayangin aja ada)
-- todo  : cari artikel berdasarkan id yang dimaksud, update value id admin & status validasinya berdasarkan parameter yg diterima.
-- return: -
+-	Melihat Menu Upgrade Keanggotaan (sama dengan admin) (READ)
+1.	Return seluruh entry yang ada di tabel Keanggotaan.
 
-6. Member_Baca_Artikel (DONE)
-- param : tanggal_baca (get current date), id_member yg membaca, dan id_artikel yg dipilih untuk dibaca
-- todo  : insert entry ke tabel membaca artikel (log baca)
-- return: - / isi log baca artikel
+-	Melakukan Transaksi Keanggotaan (CREATE)
+1.	Menerima id_member yang akan melakukan transaksi dan id_keanggotaan yang akan dibeli.
+2.	Ambil data harga keanggotaan yang dibeli, tanggal dilakukannya transaksi.
+3.	Masukkan entry baru ke dalam tabel Transaksi_Keanggotaan dengan status_validasi di set 0 (belum tervalidasi) dan id_admin diset 1 (akan diupdate menjadi id_admin yang memvalidasi nantinya).
+4.	Return true
 
-7. Member_Review_Artikel (DONE)
-- param : id_member, id_artikel, tanggal review, rating, komentar
-- todo  : cek apakah member dengan id tersebut sudah pernah melakukan review thd artikel dgn id_artikel di parameter? kalau sudah, brati tinggal update aja tanggal review, rating dan komentarnya. Sebaliknya kalau belum pernah, berati insert new entry di tabel Review berdasarkan parameter yang diterima
-- return: - 
+-	Melihat Seluruh Artikel (sama dengan admin) (READ)
+1.	Return seluruh entry data dari tabel Artikel.
 
-8. Member_Favorit_Artikel (DONE)
-- param : id_member, id_artikel, tanggal_favorit
-- todo  : cek apakah id_member tsb sdh pernah memfavoritkan artikel dengan id_artikel tsb? kalau belum, insert new entry di tabel favorit, sedangkan kalau sudah, cari entry di tabel favorit yang memiliki id member dan id artikel sesuai dengan yg di parameter, lalu hapus entrynya.
-- return: true jika berhasil difavoritkan, dan false jika berhasil di non-favoritkan
+-	Filtering Artikel berdasarkan kategori, judul, penulis(READ)
+1.	Menerima keyword filter yang diinginkan, termasuk kategori, judul, penulis dan status premium artikel.
+2.	Buat query dynamic yang berisi pengambilan data dari function yang berfungsi untuk memfilter berdasarkan sejumlah n kategori (format string kategori ‘kategori1,kategori2’), dengan syarat WHERE filter judul dan penulis. 
+3.	Setelah query lengkap untuk setiap filternya, maka eksekusikan query.
 
-9. Member_Transaksi_Keanggotaan
-- param : id_member, id_keanggotaan, tanggal_transaksi
-- todo  : insert ke tabel Transaksi, dengan id admin yg memvalidasi di set default 0 (nantinya akan diupdate saat divalidasi) dan status validasi = 0. 
-- return: -
-**note : tabel ini akan terlihat tidak normal krn mencatat harga yg dibayarkan , tapi akan mempercepat operasi analisis (jadi gabutuh join" lagi buat cek harga keanggotaannya)
+-	Memilih Artikel untuk dibaca (sama dengan admin) (READ)
+1.	Menerima id_member yang akan membaca dan id_artikel yang dipilih.
+2.	Cek apakah status keanggotaan member >= dengan kode is_premium pada tabel Artikel.
+3.	Jika >= maka return entry artikel yang dipilih.
+4.	Sebaliknya, maka return false
 
-10. Admin_Validasi_Transaksi_Keanggotaan (DONE)
-- param : id_transaksi, id_admin, status_validasi
-- todo  : update entry ke-id_transaksi di tabel transaksi, berdasarkan id_admin dan status validasi yang ada di param.
-- return: -
+-	Mencatat log artikel yang dibaca (CREATE)
+1.	Menerima id_member yang sedang membaca dan id_artikel yang dibacanya.
+2.	Ambil current date lalu masukan dengan parameter lainnya sebagai entry pada tabel Membaca.
 
-11. Admin_Update_Daftar_Tipe_Keanggotaan (DONE)
-- param : keyword (apakah mau 'tambah' atau 'update'), nama_keanggotaan, harga, durasi_hari, tanggal_berlaku, id_admin
-- todo  : jika tambah, maka langsung insert aja entry tipe keanggotaannya. sebaliknya kalau update, cari nama keanggotaan yang ingin di update lalu update atribut lainnya sesuai dengan param
-- return: -
+-	Menulis Artikel (CREATE)
+1.	Menerima id_member yang menulis, disertai data diri artikel (nama, path, current date).
+2.	Mengambil status_keanggotaan penulis artikel
+3.	Menambahkan entry baru pada tabel Artikel dengan data artikel yang diterima, set status_validasi 0 an id_admin 1 (nanti akan diupdate dengan id admin yang memvalidasinya).
+
+-	Melihat artikel-artikel yang pernah ditulis beserta status validasinya (READ)
+1.	Menerima id_member pengakses
+2.	Return data lengkap artikel dari tabel Artikel dengan id_penulisnya adalah id_member yang diterima.
+
+-	Melihat artikel-artikel yang pernah dibaca oleh suatu member (READ)
+1.	Menerima id_member yang ingin lihat log baca.
+2.	Return entry pada tabel Membaca yang memiliki id_member sesuai.
+
+-	Review artikel (CREATE)
+1.	Menerima id_member pemberi review, id_artikel yang direview, current date, komentar serta ratingnya.
+2.	Tambahkan entry baru pada tabel Review.
+3.	Return true
+
+-	Memfavoritkan artikel (CREATE / DELETE)
+1.	Menerima id_member, id_artikel yang difavoritkan, serta current date
+2.	Masukan entry favoritkan artikel.
+
+b)	SP pada stakeholder : Admin
+-	Login (sama percis dengan member punya) (READ)
+1.	Menerima username dan password .
+2.	Cek apakah usernamenya ada di tabel Pengguna.
+3.	Jika ada, cek apakah passwordnya sesuai. Jika sesuai, maka return true
+4.	Sebaliknya return false.
+
+-	Melihat daftar member (READ)
+1.	Return seluruh entry dari tabel Member.
+
+-	Melihat laporan seluruh transaksi keanggotaan (READ)
+1.	Return seluruh entry dari tabel Transaksi_Keanggotaan.
+
+-	Melihat laporan transaksi keanggotaan salah satu member (READ)
+1.	Menerima id_member yang akan dilihat laporan transaksinya.
+2.	Return entry pada tabel Transaksi_Keanggotaan yang memiliki id_member sesuai.
+
+-	Validasi transaksi keanggotaan (READ)
+1.	Menerima id_transaksi_keanggotaan dan id_admin validator.
+2.	Update value status_validasinya menjadi -1 jika ditolak, atau 1 jika diterima. 
+3.	Update value id_admin validator menjadi id_admin yang memvalidasi. 
+
+-	Melihat daftar seluruh tipe keanggotaan (sama dengan yang member) (READ)
+1.	Return seluruh entry dari tabel Keanggotaan
+
+-	Mengupdate keterangan tipe keanggotaan (CREATE / UPDATE)
+1.	Menerima id_keanggotaan yang akan diupdate, id_admin, serta keterangan lainnya yang dibutuhkan untuk mengupdate keanggotaan.
+2.	Cari keanggotaan yang dituju, lalu update data-datanya sesuai parameter yang diterima
+3.	Update juga id_admin yang terakhir mengeditnya.
+
+-	Melihat daftar seluruh artikel (sama dengan member) (READ)
+1.	Return seluruh entry dari tabel Artikel.
+
+-	Filtering artikel berdasarkan status_validasinya (READ)
+1.	Menerima filter status_validasi.
+2.	Return entry dari tabel artikel sesuai dengan filter status_validasi yang diinginkan.
+
+-	Melihat artikel terpilih (sama dengan member) (READ)
+1.	Menerima id_artikel yang akan dilihat.
+2.	Return entry dari tabel Artikel sesuai dengan id yang diinginkan.
+
+-	Validasi artikel (UPDATE)
+1.	Menerima id_admin validator, id_artikel yang akan divalidasi, status_validasi.
+2.	Cari entry di tabel Artikel yang memiliki id sesuai dengan id_artikel yang diterima.
+3.	Update value status_validasinya menjadi -1 jika tidak disetujui, atau 1 jika disetujui, serta update juga id_admin validatornya.
+
+
