@@ -1,5 +1,6 @@
 /**
-admin melihat daftar transaksi keanggotaan seluruh member
+admin melihat daftar seluruh transaksi keanggotaan 
+return tabel berisi seluruh data transaksi keanggotaan yang pernah terjadi
 **/
 
 GO

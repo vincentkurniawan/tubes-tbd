@@ -1,7 +1,7 @@
-/**
-- member memilih salah satu artikel untuk dibaca 
-- admin memilih salah satu artikel untuk di cek dan nantinya bisa divalidasi
-**/
+/*
+member memilih salah satu artikel untuk dibaca 
+admin memilih salah satu artikel untuk di cek dan nantinya bisa divalidasi
+*/
 
 GO 
 USE Perpustakaan

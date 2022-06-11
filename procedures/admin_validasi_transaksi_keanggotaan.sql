@@ -1,7 +1,5 @@
---Admin_Validasi_Transaksi_Keanggotaan
---param : id_transaksi, id_admin, status_validasi
---todo  : update entry ke-id_transaksi di tabel transaksi, berdasarkan id_admin dan status validasi yang ada di param.
---return: -
+/* Admin validasi transaksi keanggotaan yang sudah terjadi */
+
 GO
 USE Perpustakaan
 

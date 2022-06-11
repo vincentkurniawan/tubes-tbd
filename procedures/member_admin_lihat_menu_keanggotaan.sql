@@ -1,6 +1,4 @@
-/**
-lihat menu tipe keanggotaan
-**/
+/*lihat seluruh daftar tipe keanggotaan*/
 
 GO
 USE Perpustakaan

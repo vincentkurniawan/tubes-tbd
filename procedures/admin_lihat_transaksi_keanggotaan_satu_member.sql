@@ -1,16 +1,13 @@
 /**
-Melihat laporan transaksi keanggotaan
-
-- admin_lihat_transaksi_keanggotaan
-param : id_member
-todo  : select semua transaksi keanggotaan
-return: -
+Melihat laporan transaksi keanggotaan dari salah satu member
+Return keterangan lengkap (log) transaksi keanggotaan dari member terpilih
 **/
+
 GO
 USE Perpustakaan
 
 GO
-CREATE PROCEDURE admin_lihat_transaksi_keanggotaan(
+CREATE PROCEDURE admin_lihat_transaksi_keanggotaan_satu_member(
 	@id_member INT
 )
 AS
@@ -23,4 +20,4 @@ AS
 	END
 
 GO
-EXEC admin_lihat_transaksi_keanggotaan @id_member=2
+EXEC admin_lihat_transaksi_keanggotaan_satu_member @id_member=2
