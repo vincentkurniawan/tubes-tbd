@@ -1,10 +1,13 @@
+/**
+Admin filter artikel berdasarkan status validasi
+Return daftar artikel hasil filter 
+**/
+
 GO
 USE Perpustakaan
 
--- KELUARKAN ARTIKEL YANG UDAH DIVALIDASI DENGAN FILTER YANG DIPILIH USER
-
 GO
-CREATE FUNCTION admin_filtered_artikel (@kategori VARCHAR(500))
+CREATE FUNCTION admin_get_filtered_artikel (@kategori VARCHAR(500))
     RETURNS @filtered_artikel TABLE 
     (
         id_artikel INT,
@@ -35,7 +38,7 @@ CREATE FUNCTION admin_filtered_artikel (@kategori VARCHAR(500))
     END
 
 GO
-CREATE PROCEDURE admin_pencarian_artikel
+CREATE PROCEDURE admin_filter_artikel
     (
         @kategori VARCHAR(500),
         @judul VARCHAR(500),
@@ -45,7 +48,7 @@ CREATE PROCEDURE admin_pencarian_artikel
     AS
 
     DECLARE
-    @query NVARCHAR(500) = 'SELECT * FROM dbo.get_filtered_artikel(',
+    @query NVARCHAR(500) = 'SELECT * FROM dbo.admin_get_filtered_artikel(',
     @check INT = 0
 
     IF (@kategori IS NULL) BEGIN
@@ -86,4 +89,4 @@ CREATE PROCEDURE admin_pencarian_artikel
     EXEC sp_executesql @query
 
 GO
-EXEC admin_pencarian_artikel NULL,NULL,NULL,1
+EXEC admin_filter_artikel NULL,NULL,NULL,1

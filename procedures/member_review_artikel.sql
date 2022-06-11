@@ -1,8 +1,4 @@
---Member_Review_Artikel 
---param : id_member, id_artikel, tanggal review, rating, komentar
---todo  : cek apakah member dengan id tersebut sudah pernah melakukan review thd artikel dgn id_artikel di parameter? kalau sudah, brati tinggal update aja tanggal review, rating dan komentarnya. 
---Sebaliknya kalau belum pernah, berati insert new entry di tabel Review berdasarkan parameter yang diterima
---return: - 
+/*member dapat melakukan review dan memberi rating / komentar thd suatu artikel*/
 
 GO
 USE Perpustakaan

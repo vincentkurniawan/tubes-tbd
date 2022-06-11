@@ -1,4 +1,5 @@
---Member_Update_Data (Data Register)
+/*member mampu mengedit keterangan diri pada profilenya*/
+
 GO
 USE Perpustakaan
 
