@@ -6,7 +6,7 @@ GO
 USE Perpustakaan
 
 GO
-CREATE PROCEDURE register (
+ALTER PROCEDURE register (
 	@username VARCHAR(255), 
 	@pass VARCHAR(255), 
 	@nama VARCHAR(255), 
