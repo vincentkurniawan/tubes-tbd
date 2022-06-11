@@ -50,3 +50,4 @@ GO
 EXEC tulis_artikel 'C:\Users\LENOVO\Downloads\TubesTBD\10.pdf', 2, NULL, 'Diary of A Wimpy Kid', '1', '1,2,3,4'
 SELECT * FROM artikel;
 SELECT * FROM Artikel_Kategori;
+

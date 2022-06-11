@@ -1,4 +1,5 @@
 #include <bits/stdc++.h>
+#include<string>  
 
 using namespace std;
 
@@ -80,15 +81,20 @@ string randTelp (int len){
     return res;
 }
 
+string randTanggal () {
+    
+}
+
 int main () {
     ofstream myfile;
     myfile.open ("example.txt");
-    for (int i=0; i<50; i++){
-        string user = randUser(4);
-        string pass = randUser(8);
-        string nama = user + " " + randUser(6);
-        string email = user + "@gmail.com";
-        myfile << "EXEC register '" << user << "', '" << pass << "', '" << nama << "', '" << email << "', '" << randTelp(12) << "', 'Jl. Juanda No. " << i << "', '" << randKota() << "'\n";
+    for (int i=0; i<100; i++){
+        // string user = randUser(4);
+        // string pass = randUser(8);
+        // string nama = user + " " + randUser(6);
+        // string email = user + "@gmail.com";
+        // myfile << "EXEC register '" << user << "', '" << pass << "', '" << nama << "', '" << email << "', '" << randTelp(12) << "', 'Jl. Juanda No. " << i << "', '" << randKota() << "'\n";
+        myfile << "EXEC member_transaksi_keanggotaan " << rand()%50+1 << ", " << rand()%2+2 << ", ";
     }
     myfile.close();
 }
