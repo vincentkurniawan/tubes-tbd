@@ -33,7 +33,7 @@ for i in range (0, 100):
     len1 = r.randint(1,4)
     str2 = category[r.randint(0,49)]
     for j in range (0, len1):
-        str2 += ', ' + category[r.randint(0,49)]
+        str2 += ',' + category[r.randint(0,49)]
     # f.write("EXEC member_transaksi_keanggotaan %s, %s, '20%s0%s%s'\n" % (r.randint(1, 50), r.randint(2,3), r.randint(17,21), r.randint(1,9), r.randint(10,28)))
     f.write("EXEC member_tulis_artikel 'C:Users/Perpustakaan/Library/artikel{}.pdf', '20{}0{}{}', '{}', {}, '{}' \n".format(i+1, r.randint(17,21), r.randint(1,9), r.randint(10,28), str1, r.randint(1,50), str2))
 f.close()
