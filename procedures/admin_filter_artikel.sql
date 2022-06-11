@@ -4,7 +4,7 @@ USE Perpustakaan
 -- KELUARKAN ARTIKEL YANG UDAH DIVALIDASI DENGAN FILTER YANG DIPILIH USER
 
 GO
-CREATE FUNCTION get_filtered_artikel (@kategori VARCHAR(500))
+CREATE FUNCTION get_admin_filtered_artikel (@kategori VARCHAR(500))
     RETURNS @filtered_artikel TABLE 
     (
         id_artikel INT,
@@ -14,23 +14,22 @@ CREATE FUNCTION get_filtered_artikel (@kategori VARCHAR(500))
         tanggal_tulis DATE,
         id_penulis INT,
         id_admin INT,
-        nama_penulis VARCHAR(500)
+        nama_penulis VARCHAR(500),
+        status_validasi INT
     )
     BEGIN
         IF (@kategori IS NOT NULL) BEGIN
             INSERT INTO @filtered_artikel
-                SELECT DISTINCT Artikel.id_artikel, Artikel.is_premium, Artikel.nama_artikel, Artikel.path_artikel, Artikel.tanggal_tulis, Artikel.id_penulis, Artikel.id_admin, Member.nama
+                SELECT DISTINCT Artikel.id_artikel, Artikel.is_premium, Artikel.nama_artikel, Artikel.path_artikel, Artikel.tanggal_tulis, Artikel.id_penulis, Artikel.id_admin, Member.nama, Artikel.status_validasi
                 FROM    string_split(@kategori, ',') AS splitted INNER JOIN Kategori ON splitted.[value] = Kategori.nama_kategori
                         INNER JOIN Artikel_Kategori ON Kategori.id_kategori = Artikel_Kategori.id_kategori
                         INNER JOIN Artikel ON Artikel.id_artikel = Artikel_Kategori.id_artikel
                         INNER JOIN Member ON Artikel.id_penulis = Member.id_member
-                WHERE   status_validasi = 1
         END
         ELSE BEGIN
             INSERT INTO @filtered_artikel
                 SELECT Artikel.id_artikel, is_premium, nama_artikel, path_artikel, tanggal_tulis, id_penulis, id_admin, Member.nama
                 FROM Artikel INNER JOIN Member ON Artikel.id_penulis = Member.id_member
-                WHERE status_validasi = 1
         END
         RETURN
     END
