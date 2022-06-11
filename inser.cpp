@@ -83,12 +83,11 @@ string randTelp (int len){
 int main () {
     ofstream myfile;
     myfile.open ("example.txt");
-    for (int i=0; i<50; i++){
-        string user = randUser(4);
-        string pass = randUser(8);
-        string nama = user + " " + randUser(6);
-        string email = user + "@gmail.com";
-        myfile << "EXEC register '" << user << "', '" << pass << "', '" << nama << "', '" << email << "', '" << randTelp(12) << "', 'Jl. Juanda No. " << i << "', '" << randKota() << "'\n";
+    for (int i=0; i<100; i++){
+        int idmember = rand()%50+1;
+        int artikel =  rand()%100+1;
+        int tanggal = rand()%20220610+20200101;
+        myfile << "EXEC favorite_artikel " << idmember << ", " << artikel << ", '" << tanggal <<"'" << endl;  
     }
     myfile.close();
 }
