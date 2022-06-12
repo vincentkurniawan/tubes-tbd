@@ -1,6 +1,5 @@
 GO
 USE Perpustakaan
-
 --negara
 INSERT INTO Negara (nama_negara) 
 VALUES 

@@ -2,7 +2,7 @@ GO
 USE Perpustakaan
 
 GO
-ALTER PROCEDURE admin_validasi_status_aktif_keanggotaan
+CREATE PROCEDURE admin_validasi_status_aktif_keanggotaan
 (
     @id_member INT
 )
@@ -34,6 +34,9 @@ AS
         RETURN @days
     END
     ELSE BEGIN
+        UPDATE Member
+        SET status_keanggotaan = 1
+        WHERE id_member = @id_member
         PRINT -1
         RETURN -1
     END

@@ -51,8 +51,13 @@ category = [
 
 
 # for i in range (0, 100):
-#     f.write("EXEC validasi_artikel_baru {}, {}, {}\n".format(i+1, r.randint(1,10), r.randint(0,1)))
+#     f.write("EXEC admin_validasi_artikel_baru {}, {}, {}\n".format(i+1, r.randint(1,10), r.randint(0,1)))
 
+# for i in range (0, 100):
+#     f.write("EXEC member_catat_log_baca_artikel {}, {}\n".format(r.randint(1,100), r.randint(1,100)))
+
+comments = ['HAHAHAHA', 'VIRAL GA SIH???', '', 'WKWKWKKW', 'IHH UCHULL', 'ASTAGAAA', 'OMGG', 'YAAMPUNN']
+len1 = len(comments)
 for i in range (0, 100):
-    f.write("EXEC member_baca_artikel {}, {}\n".format(r.randint(1,100), r.randint(1,100)))
+    f.write("EXEC member_review_artikel {}, {}, NULL, {}, '{}'\n".format(r.randint(1,100), r.randint(1,100), r.randint(1,5), comments[r.randint(0,len1-1)]))
 f.close()

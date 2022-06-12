@@ -7,7 +7,7 @@ GO
 USE Perpustakaan
 
 GO
-CREATE PROCEDURE member_lihat_log_artikel(
+CREATE PROCEDURE member_lihat_log_baca_artikel(
 	@id_member INT
 )
 AS
@@ -20,5 +20,5 @@ AS
 GO
 
 GO
-EXEC member_lihat_log_artikel @id_member = 1
+EXEC member_lihat_log_baca_artikel @id_member = 1
 

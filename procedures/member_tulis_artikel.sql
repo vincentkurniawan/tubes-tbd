@@ -8,7 +8,7 @@ GO
 USE Perpustakaan
 
 GO
-ALTER PROCEDURE member_tulis_artikel(
+CREATE PROCEDURE member_tulis_artikel(
 	@path_artikel VARCHAR(500), --path_artikel di tabel artikel
 	@tanggal_tulis DATE, --tanggal tulis di artikel
 	@nama_artikel VARCHAR(500), --nama artikel  di tabel artikel
@@ -148,3 +148,9 @@ EXEC member_tulis_artikel 'C:Users/Perpustakaan/Library/artikel97.pdf', '2017011
 EXEC member_tulis_artikel 'C:Users/Perpustakaan/Library/artikel98.pdf', '20200925', 'eyuwaler eqogebek', 32, '37,5' 
 EXEC member_tulis_artikel 'C:Users/Perpustakaan/Library/artikel99.pdf', '20210325', 'agarexow obuzasuw', 41, '9,31,4,44' 
 EXEC member_tulis_artikel 'C:Users/Perpustakaan/Library/artikel100.pdf', '20190519', 'itucatuz imumedow', 19, '34,34'
+
+SELECT *
+FROM Artikel
+
+SELECT *
+FROM Member

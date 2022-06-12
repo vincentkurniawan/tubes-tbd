@@ -120,3 +120,6 @@ EXEC admin_validasi_transaksi_keanggotaan 97, 5, 0
 EXEC admin_validasi_transaksi_keanggotaan 98, 2, 0
 EXEC admin_validasi_transaksi_keanggotaan 99, 8, 1
 EXEC admin_validasi_transaksi_keanggotaan 100, 8, 1
+
+SELECT *
+FROM Member
