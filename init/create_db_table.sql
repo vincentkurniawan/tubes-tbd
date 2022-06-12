@@ -34,7 +34,7 @@ BEGIN
 	 CREATE TABLE Pengguna
 	 (
 		  id_pengguna INT NOT NULL IDENTITY(1,1) PRIMARY KEY,
-		  username VARCHAR (255) NOT NULL,
+		  username VARCHAR (255) NOT NULL UNIQUE,
 		  pass VARCHAR (255) NOT NULL
 	 )
 END

@@ -1,0 +1,53 @@
+Hasil tes oleh kesun
+12/06/2022
+9:34 malam
+
+QC PASSED : 
+1. [Member] register (member_register)
+2. [Member_Admin] login (member_admin_login)
+3. [Member] tulis artikel (member_tulis_artikel)
+4. [Member] update data
+5. [Member] log membaca
+6. [Member] favorit artikel
+7. [Member] filter artikel
+8. [Member] jumlah favorit artikel
+9. [Member] lihat log baca artikel
+10.[Member] review artikel
+11.[Member] lihat review artikel
+12.[Member] lihat status keanggotaan pribadi
+13.[Member] transaksi keanggotaan
+14.[Member] lihat status artikel yang ditulis
+15.[Admin] filter transaksi
+16.[Admin] lihat_daftar_transaksi_keanggotaan
+17.[Admin] validasi transaksi keanggotaan
+18.[Admin] lihat transaksi satu member
+19.[Admin] melihat daftar member
+20.[Admin] update daftar tipe keanggotaan
+21.[Admin] validasi artikel baru
+22.[Admin] lihat menu keanggotaan
+23.[Admin_member] pilih artikel
+
+ON HOLD : 
+1.[Admin] validasi status keanggotaan 
+apakah mau dibikin dalam bentuk SP? karena di situ masih dalam bentuk function.
+
+2.[Admin_member] lihat_menu_keanggotaan
+Apakah member juga bisa melihat semua perubahan harga beserta tanggal? atau yang dilihat member hanya data terakhirnya saja?
+
+
+
+CHANGELOG : 
+1. create_db_table.sql
+(+) UNIQUE identifier pada username 
+ 
+2. member_admin_login
+(+) komentar keterangan SP
+
+3. member_update_data
+(#) benerin query buat nyari @id_pengguna
+
+4. member_lihat_jumlah_favorit_artikel
+(+) tambah nama kolom biar lebih estetik
+
+5. lihat daftar transaksi keanggotaan
+(#) bug fixed dimana admin gabisa ngeliat transaksi yang belom tervalidasi

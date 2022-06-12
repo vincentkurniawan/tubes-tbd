@@ -78,6 +78,7 @@ CREATE PROCEDURE member_filter_artikel
 GO
 EXEC member_filter_artikel 'Romance',NULL,NULL
 
+/*
 SELECT *
 FROM Artikel_Kategori
 
@@ -86,3 +87,4 @@ FROM Kategori
 
 SELECT *
 FROM Artikel
+*/

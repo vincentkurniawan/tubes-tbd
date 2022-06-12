@@ -1,4 +1,3 @@
---Member_Tulis_Artikel (ON GOING BY K)
 --param : path pdf artikel, status keanggotaan penulis, tanggal_tulis, nama_artikel, id penulis
 --todo  : insert entry baru ke dalam tabel Artikel berdasarkan param yang telah diperoleh, dengan status_validasi 0 dan id admin validator 0 (default)
 --return: true jika artikel berhasil diinsert

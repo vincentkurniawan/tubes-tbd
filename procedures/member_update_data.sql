@@ -18,9 +18,9 @@ AS
 	@id_pengguna INT,
 	@id_kota INT
 
-	SELECT @id_pengguna = id_pengguna
-	FROM Pengguna
-	WHERE username = @username
+	--assert SELECT COUNT(id_pengguna) FROM Pengguna = 1
+
+	SET @id_pengguna = (SELECT id_pengguna FROM Pengguna WHERE Pengguna.username = @username)
 
 	IF @pass IS NOT NULL
 	BEGIN 
@@ -69,7 +69,7 @@ AS
 		WHERE id_pengguna = @id_pengguna
 	END
 GO
-EXEC member_update_data 'zira', 'ziraaaaa', 'Johny Depp', 'kopisejuk@yahoo.com', '021447722', 'Jl. jalan santai', 'Tokyo'
+EXEC member_update_data 'zira', 'ziraaaaa', 'Charles Hotskot', 'kopisejuk@yahoo.com', '021447722', 'Jl. jalan santai', 'Tokyo'
 
 SELECT *
 FROM Pengguna

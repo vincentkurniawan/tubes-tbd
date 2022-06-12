@@ -2,7 +2,7 @@ GO
 USE Perpustakaan
 
 GO
-ALTER PROCEDURE member_lihat_jumlah_favorit_artikel (@id_artikel INT)
+CREATE PROCEDURE member_lihat_jumlah_favorit_artikel (@id_artikel INT)
 AS
     IF (@id_artikel IS NULL) BEGIN
         SELECT id_artikel, COUNT (id_artikel) as 'jumlah favorit'
@@ -11,7 +11,7 @@ AS
         ORDER BY [jumlah favorit] DESC
     END
     ELSE BEGIN
-        SELECT @id_artikel, COUNT (id_artikel) as 'jumlah favorit'
+        SELECT @id_artikel AS 'id_artikel', COUNT (id_artikel) as 'jumlah favorit'
         FROM Favorit
         WHERE id_artikel = @id_artikel
         GROUP BY id_artikel

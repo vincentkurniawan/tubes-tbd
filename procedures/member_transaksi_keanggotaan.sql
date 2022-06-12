@@ -23,11 +23,9 @@ AS
 	VALUES
 		(@harga, @tanggal_transaksi, 0, @id_member, NULL, @id_keanggotaan)
 
-
---kalau tanggal transaksi = NULL, artinya TODAY!
---EXEC member_transaksi_keanggotaan @id_member=3, @id_keanggotaan=3, @tanggal_transaksi=NULL
-
 GO
+--kalau tanggal transaksi = NULL, artinya TODAY!
+
 EXEC member_transaksi_keanggotaan 1, 2, NULL
 EXEC member_transaksi_keanggotaan 2, 2, NULL
 EXEC member_transaksi_keanggotaan 3, 3, NULL
