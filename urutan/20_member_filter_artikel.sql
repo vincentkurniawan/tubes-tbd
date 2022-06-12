@@ -36,7 +36,7 @@ CREATE FUNCTION get_filtered_artikel (@kategori VARCHAR(500))
     END
 
 GO
-CREATE PROCEDURE member_filter_artikel
+ALTER PROCEDURE member_filter_artikel
     (
         @kategori VARCHAR(500),
         @judul VARCHAR(500),
@@ -60,16 +60,16 @@ CREATE PROCEDURE member_filter_artikel
     PRINT @query
 
     IF (@judul IS NOT NULL) BEGIN
-        set @query = CONCAT(@query, 'WHERE nama_artikel = ''', @judul, ''' ')
+        set @query = CONCAT(@query, 'WHERE nama_artikel LIKE ''%', @judul, '%'' ')
         set @check = 1
     END
 
     IF (@penulis IS NOT NULL) BEGIN
         IF (@check = 1) BEGIN
-            set @query = CONCAT(@query, 'AND nama_penulis = ''', @penulis, ''' ')
+            set @query = CONCAT(@query, 'AND nama_penulis LIKE ''%', @penulis, '%'' ')
         END
         ELSE BEGIN
-            set @query = CONCAT(@query, 'WHERE nama_penulis = ''', @penulis, ''' ')
+            set @query = CONCAT(@query, 'WHERE nama_penulis LIKE ''%', @penulis, '%'' ')
         END
     END
 
@@ -77,12 +77,5 @@ CREATE PROCEDURE member_filter_artikel
 
 GO
 EXEC member_filter_artikel 'Romance',NULL,NULL
-
-SELECT *
-FROM Artikel_Kategori
-
-SELECT *
-FROM Kategori
-
-SELECT *
-FROM Artikel
+EXEC member_filter_artikel NULL,'an',NULL
+EXEC member_filter_artikel 'Action',NULL,''
