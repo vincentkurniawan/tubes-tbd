@@ -144,3 +144,6 @@ EXEC member_review_artikel 7, 86, NULL, 4, ''
 EXEC member_review_artikel 89, 29, NULL, 4, 'ASTAGAAA'
 EXEC member_review_artikel 97, 84, NULL, 2, 'HAHAHAHA'
 EXEC member_review_artikel 43, 73, NULL, 3, 'YAAMPUNN'
+
+SELECT *
+FROM Review

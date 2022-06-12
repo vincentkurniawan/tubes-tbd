@@ -147,3 +147,6 @@ EXEC member_register 'yozu', 'kitubozu', 'yozu rowebo', 'yozu@gmail.com', '35091
 EXEC member_register 'kiku', 'xanejuli', 'kiku noqono', 'kiku@gmail.com', '610474271572', 'Jl. Juanda No. 97', 'Dukhan'
 EXEC member_register 'yizo', 'qakorera', 'yizo rumori', 'yizo@gmail.com', '774531334352', 'Jl. Juanda No. 98', 'Buenos Aires'
 EXEC member_register 'weho', 'quzusiwa', 'weho sigimi', 'weho@gmail.com', '086450157327', 'Jl. Juanda No. 99', 'Kabul'
+
+SELECT *
+FROM Member

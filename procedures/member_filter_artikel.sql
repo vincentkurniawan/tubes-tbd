@@ -76,7 +76,10 @@ CREATE PROCEDURE member_filter_artikel
     EXEC sp_executesql @query
 
 GO
-EXEC member_filter_artikel 'Romance,Action,Comedy',NULL,NULL
+EXEC member_filter_artikel 'Romance',NULL,NULL
 
 SELECT *
-FROM Artikel
+FROM Artikel_Kategori
+
+SELECT *
+FROM Kategori

@@ -115,3 +115,6 @@ EXEC member_catat_log_baca_artikel 13, 51
 EXEC member_catat_log_baca_artikel 72, 17
 EXEC member_catat_log_baca_artikel 6, 68
 EXEC member_catat_log_baca_artikel 24, 78
+
+SELECT *
+FROM Membaca

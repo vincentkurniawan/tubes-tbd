@@ -123,3 +123,6 @@ EXEC admin_validasi_artikel_baru 97, 4, 0
 EXEC admin_validasi_artikel_baru 98, 7, 0
 EXEC admin_validasi_artikel_baru 99, 1, 0
 EXEC admin_validasi_artikel_baru 100, 9, 0
+
+SELECT *
+FROM Artikel

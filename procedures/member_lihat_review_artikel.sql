@@ -11,4 +11,4 @@ AS
     ORDER BY tanggal_review
 
 GO
-EXEC member_lihat_review_artikel 1
+EXEC member_lihat_review_artikel 5
