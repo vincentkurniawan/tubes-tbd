@@ -21,19 +21,38 @@ category = [
 ]
 
 
+# for i in range (0, 100):
+#     str1 = ''
+#     for j in range (0, 8):
+#         if j%2 == 0: str1 += vocals[r.randint(0,4)]
+#         else: str1 += consonant[r.randint(0,20)]
+#     str1 += ' '
+#     for j in range (0, 8):
+#         if j%2 == 0: str1 += vocals[r.randint(0,4)]
+#         else: str1 += consonant[r.randint(0,20)]
+#     len1 = r.randint(1,4)
+#     str2 = str(r.randint(1,50))
+#     for j in range (0, len1):
+#         str2 += ',' + str(r.randint(1,50))
+#     # f.write("EXEC member_transaksi_keanggotaan %s, %s, '20%s0%s%s'\n" % (r.randint(1, 50), r.randint(2,3), r.randint(17,21), r.randint(1,9), r.randint(10,28)))
+#     f.write("EXEC member_tulis_artikel 'C:Users/Perpustakaan/Library/artikel{}.pdf', '20{}0{}{}', '{}', {}, '{}' \n".format(i+1, r.randint(17,21), r.randint(1,9), r.randint(10,28), str1, r.randint(1,50), str2))
+
+# for i in range (0, 80):
+#     f.write("EXEC member_transaksi_keanggotaan %s, %s, NULL\n" % (i+1, r.randint(2,3)))
+
+
+# for i in range (0, 100):
+#     f.write("EXEC admin_validasi_transaksi_keanggotaan {}, {}, {}\n".format(i+1, r.randint(1,10), r.randint(0,1)))
+
+
+
+# for i in range (0, 100):
+#     f.write("EXEC admin_validasi_status_aktif_keanggotaan {}\n".format(i+1))
+
+
+# for i in range (0, 100):
+#     f.write("EXEC validasi_artikel_baru {}, {}, {}\n".format(i+1, r.randint(1,10), r.randint(0,1)))
+
 for i in range (0, 100):
-    str1 = ''
-    for j in range (0, 8):
-        if j%2 == 0: str1 += vocals[r.randint(0,4)]
-        else: str1 += consonant[r.randint(0,20)]
-    str1 += ' '
-    for j in range (0, 8):
-        if j%2 == 0: str1 += vocals[r.randint(0,4)]
-        else: str1 += consonant[r.randint(0,20)]
-    len1 = r.randint(1,4)
-    str2 = category[r.randint(0,49)]
-    for j in range (0, len1):
-        str2 += ',' + category[r.randint(0,49)]
-    # f.write("EXEC member_transaksi_keanggotaan %s, %s, '20%s0%s%s'\n" % (r.randint(1, 50), r.randint(2,3), r.randint(17,21), r.randint(1,9), r.randint(10,28)))
-    f.write("EXEC member_tulis_artikel 'C:Users/Perpustakaan/Library/artikel{}.pdf', '20{}0{}{}', '{}', {}, '{}' \n".format(i+1, r.randint(17,21), r.randint(1,9), r.randint(10,28), str1, r.randint(1,50), str2))
+    f.write("EXEC member_baca_artikel {}, {}\n".format(r.randint(1,100), r.randint(1,100)))
 f.close()

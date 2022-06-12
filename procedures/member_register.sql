@@ -6,7 +6,7 @@ GO
 USE Perpustakaan
 
 GO
-ALTER PROCEDURE register (
+CREATE PROCEDURE register (
 	@username VARCHAR(255), 
 	@pass VARCHAR(255), 
 	@nama VARCHAR(255), 
@@ -48,7 +48,6 @@ AS
 			VALUES (@nama, @email, @telp, @alamat, @keanggotaan, @id_kota, @id_pengguna)
 		END
         RETURN 0
-
 GO
 EXEC register 'zira', 'wuqoyusa', 'zira rikeri', 'zira@gmail.com', '614232216857', 'Jl. Juanda No. 0', 'Shanghai'
 EXEC register 'qemu', 'gikafoxi', 'qemu modego', 'qemu@gmail.com', '742779319865', 'Jl. Juanda No. 1', 'Seoul'
@@ -100,3 +99,53 @@ EXEC register 'nemo', 'lamasuso', 'nemo vuciwa', 'nemo@gmail.com', '823210407590
 EXEC register 'neta', 'gotevoqa', 'neta sekamo', 'neta@gmail.com', '899942087873', 'Jl. Juanda No. 47', 'Osaka'
 EXEC register 'yibu', 'mesenazo', 'yibu fibeyo', 'yibu@gmail.com', '605496082740', 'Jl. Juanda No. 48', 'Phnom Penh'
 EXEC register 'nexe', 'fuvomece', 'nexe gosuhi', 'nexe@gmail.com', '791586394538', 'Jl. Juanda No. 49', 'Yerusalem'
+EXEC register 'yogu', 'gayoxode', 'yogu desire', 'yogu@gmail.com', '192631597026', 'Jl. Juanda No. 50', 'Vohemar'
+EXEC register 'gizi', 'lotapawo', 'gizi botoke', 'gizi@gmail.com', '505909354272', 'Jl. Juanda No. 51', 'Basra'
+EXEC register 'rigi', 'vekijubo', 'rigi yivevu', 'rigi@gmail.com', '266584037831', 'Jl. Juanda No. 52', 'Marseille'
+EXEC register 'fidi', 'silenepi', 'fidi robenu', 'fidi@gmail.com', '432538327068', 'Jl. Juanda No. 53', 'Bangkok'
+EXEC register 'feru', 'dogoyahu', 'feru wohipa', 'feru@gmail.com', '529126170152', 'Jl. Juanda No. 54', 'New Delhi'
+EXEC register 'duwa', 'woveroce', 'duwa cedaju', 'duwa@gmail.com', '949875648687', 'Jl. Juanda No. 55', 'Paris'
+EXEC register 'zava', 'wumacona', 'zava falilu', 'zava@gmail.com', '707412183571', 'Jl. Juanda No. 56', 'Oslo'
+EXEC register 'jiko', 'bodidona', 'jiko winoti', 'jiko@gmail.com', '371275344551', 'Jl. Juanda No. 57', 'Hamburg'
+EXEC register 'vebe', 'doxatoqo', 'vebe nebuya', 'vebe@gmail.com', '393936554050', 'Jl. Juanda No. 58', 'Azua'
+EXEC register 'mare', 'kubifafa', 'mare vawami', 'mare@gmail.com', '800683064370', 'Jl. Juanda No. 59', 'Pretoria'
+EXEC register 'giji', 'degokoke', 'giji rugeni', 'giji@gmail.com', '212288874005', 'Jl. Juanda No. 60', 'New Delhi'
+EXEC register 'quro', 'dukapeli', 'quro wogiko', 'quro@gmail.com', '048439249057', 'Jl. Juanda No. 61', 'Patan'
+EXEC register 'yile', 'lasawaxa', 'yile naduto', 'yile@gmail.com', '625763859302', 'Jl. Juanda No. 62', 'Zacatecas'
+EXEC register 'devi', 'xuhelowi', 'devi coxivo', 'devi@gmail.com', '130417721313', 'Jl. Juanda No. 63', 'Toronto'
+EXEC register 'saqa', 'gagixeza', 'saqa qoqiqu', 'saqa@gmail.com', '758409443584', 'Jl. Juanda No. 64', 'Brasilia'
+EXEC register 'yaxo', 'samifaja', 'yaxo soxaxu', 'yaxo@gmail.com', '487402354166', 'Jl. Juanda No. 65', 'Santo Domingo'
+EXEC register 'tapu', 'bimutofe', 'tapu woponi', 'tapu@gmail.com', '165013260574', 'Jl. Juanda No. 66', 'Espoo'
+EXEC register 'xute', 'perabibu', 'xute vaholo', 'xute@gmail.com', '356959883951', 'Jl. Juanda No. 67', 'Bago'
+EXEC register 'heso', 'jexohobu', 'heso husije', 'heso@gmail.com', '617306025607', 'Jl. Juanda No. 68', 'Bergen'
+EXEC register 'bata', 'sovaqapo', 'bata zawalu', 'bata@gmail.com', '372793638106', 'Jl. Juanda No. 69', 'Mumbai'
+EXEC register 'lisa', 'didasevu', 'lisa tokavu', 'lisa@gmail.com', '133529048573', 'Jl. Juanda No. 70', 'San Jose'
+EXEC register 'pada', 'rivejopo', 'pada biyuxo', 'pada@gmail.com', '282558124988', 'Jl. Juanda No. 71', 'Lisboa'
+EXEC register 'nici', 'saqoqaja', 'nici xuqogu', 'nici@gmail.com', '924904498532', 'Jl. Juanda No. 72', 'Hverageroi'
+EXEC register 'favi', 'surohiwo', 'favi diloga', 'favi@gmail.com', '012107668058', 'Jl. Juanda No. 73', 'Brasilia'
+EXEC register 'dumi', 'jidivawo', 'dumi periki', 'dumi@gmail.com', '795929130819', 'Jl. Juanda No. 74', 'Bangkok'
+EXEC register 'nazu', 'daxenape', 'nazu tubaxi', 'nazu@gmail.com', '043231027713', 'Jl. Juanda No. 75', 'Dukhan'
+EXEC register 'kigo', 'cotuwewa', 'kigo laniga', 'kigo@gmail.com', '151717949800', 'Jl. Juanda No. 76', 'Tokyo'
+EXEC register 'gova', 'qumocoze', 'gova wireme', 'gova@gmail.com', '086571028355', 'Jl. Juanda No. 77', 'Conakry'
+EXEC register 'qenu', 'yotidodo', 'qenu tedoso', 'qenu@gmail.com', '897919589693', 'Jl. Juanda No. 78', 'Marseille'
+EXEC register 'tene', 'fajepugo', 'tene hotilo', 'tene@gmail.com', '014073494568', 'Jl. Juanda No. 79', 'Busan'
+EXEC register 'qohu', 'dawuzeto', 'qohu titaxa', 'qohu@gmail.com', '619735006518', 'Jl. Juanda No. 80', 'Esztergom'
+EXEC register 'liru', 'viraceto', 'liru haraho', 'liru@gmail.com', '507341564170', 'Jl. Juanda No. 81', 'Eeklo'
+EXEC register 'nake', 'ratiyoki', 'nake wosivi', 'nake@gmail.com', '763159895495', 'Jl. Juanda No. 82', 'Kissidougou'
+EXEC register 'raci', 'xafisomi', 'raci sutoku', 'raci@gmail.com', '898163754101', 'Jl. Juanda No. 83', 'Helsinki'
+EXEC register 'lina', 'qewikugu', 'lina donomu', 'lina@gmail.com', '114352915567', 'Jl. Juanda No. 84', 'Port Royal'
+EXEC register 'xaqo', 'kuviwuru', 'xaqo nadavu', 'xaqo@gmail.com', '983504352577', 'Jl. Juanda No. 85', 'Benin City'
+EXEC register 'mupa', 'jeqasago', 'mupa toxuce', 'mupa@gmail.com', '987386280980', 'Jl. Juanda No. 86', 'Hverageroi'
+EXEC register 'puto', 'qoxitumi', 'puto rokori', 'puto@gmail.com', '466938136452', 'Jl. Juanda No. 87', 'Eeklo'
+EXEC register 'haja', 'wopoceqa', 'haja hecene', 'haja@gmail.com', '047741198103', 'Jl. Juanda No. 88', 'Conakry'
+EXEC register 'gaxo', 'mibodeta', 'gaxo fimuvu', 'gaxo@gmail.com', '213209274503', 'Jl. Juanda No. 89', 'Gramsh'
+EXEC register 'fuho', 'rezucuqu', 'fuho jevega', 'fuho@gmail.com', '623035196792', 'Jl. Juanda No. 90', 'Kissidougou'
+EXEC register 'malo', 'buvoyupo', 'malo tesufo', 'malo@gmail.com', '962273073073', 'Jl. Juanda No. 91', 'Gramsh'
+EXEC register 'duti', 'pawixulo', 'duti gacive', 'duti@gmail.com', '937915244134', 'Jl. Juanda No. 92', 'Kuala Lumpur'
+EXEC register 'noci', 'dowuziko', 'noci gisiqe', 'noci@gmail.com', '108910977451', 'Jl. Juanda No. 93', 'Porto'
+EXEC register 'siso', 'bohogesi', 'siso micivi', 'siso@gmail.com', '671754817521', 'Jl. Juanda No. 94', 'Canberra'
+EXEC register 'dape', 'baxadabo', 'dape wuvelo', 'dape@gmail.com', '899799960638', 'Jl. Juanda No. 95', 'Canberra'
+EXEC register 'yozu', 'kitubozu', 'yozu rowebo', 'yozu@gmail.com', '350910822689', 'Jl. Juanda No. 96', 'Bogota'
+EXEC register 'kiku', 'xanejuli', 'kiku noqono', 'kiku@gmail.com', '610474271572', 'Jl. Juanda No. 97', 'Dukhan'
+EXEC register 'yizo', 'qakorera', 'yizo rumori', 'yizo@gmail.com', '774531334352', 'Jl. Juanda No. 98', 'Buenos Aires'
+EXEC register 'weho', 'quzusiwa', 'weho sigimi', 'weho@gmail.com', '086450157327', 'Jl. Juanda No. 99', 'Kabul'

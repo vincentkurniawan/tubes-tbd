@@ -1,6 +1,6 @@
 IF NOT EXISTS (SELECT * FROM sys.databases WHERE name = 'Perpustakaan')
 BEGIN
-  CREATE DATABASE Perpustakaan;
+  CREATE DATABASE Perpustakaan
 END
 GO
 
