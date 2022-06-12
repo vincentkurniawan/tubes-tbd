@@ -1,14 +1,13 @@
 /*
-Admin_Update_Daftar_Tipe_Keanggotaan
-param : keyword (apakah mau 'tambah' atau 'update'), nama_keanggotaan, harga, durasi_hari, tanggal_berlaku, id_admin
-todo  : jika tambah, maka langsung insert aja entry tipe keanggotaannya. sebaliknya kalau update, cari nama keanggotaan yang ingin di update lalu update atribut lainnya sesuai dengan param
-return: -
+admin mengupdate keterangan pada tipe keanggotaan / membership
+update data pada tabel Tipe Keanggotaan, atau insert entry baru jika menambah jenis keanggotaan baru
 */
+
 GO
 USE Perpustakaan
 
 GO
-CREATE PROCEDURE update_keanggotaan (
+CREATE PROCEDURE admin_update_daftar_tipe_keanggotaan (
 	@keyword VARCHAR(255), --tidak boleh null
 	@nama_keanggotaan VARCHAR(255), --tidak boleh null
 	@harga INT,
@@ -39,5 +38,5 @@ AS
 	END
 
 GO
-EXEC update_keanggotaan 'Tambah', 'Premium', 100000, 730, '2022-06-07', 3
-EXEC update_keanggotaan 'Update', 'Premium', 150000, 1000, '2022-06-07', 2
+EXEC admin_update_daftar_tipe_keanggotaan 'Tambah', 'Premium', 100000, 730, '2022-06-07', 3
+EXEC admin_update_daftar_tipe_keanggotaan 'Update', 'Premium', 150000, 1000, '2022-06-07', 2

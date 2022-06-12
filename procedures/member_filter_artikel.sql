@@ -1,7 +1,7 @@
+/* member melakukan pencarian artikel berdasarkan kategori-kategorinya (bisa multiple category)*/
+
 GO
 USE Perpustakaan
-
--- KELUARKAN ARTIKEL YANG UDAH DIVALIDASI DENGAN FILTER YANG DIPILIH USER
 
 GO
 CREATE FUNCTION get_filtered_artikel (@kategori VARCHAR(500))
@@ -36,7 +36,7 @@ CREATE FUNCTION get_filtered_artikel (@kategori VARCHAR(500))
     END
 
 GO
-CREATE PROCEDURE pencarian_artikel
+CREATE PROCEDURE member_filter_artikel
     (
         @kategori VARCHAR(500),
         @judul VARCHAR(500),
@@ -76,7 +76,7 @@ CREATE PROCEDURE pencarian_artikel
     EXEC sp_executesql @query
 
 GO
-EXEC pencarian_artikel 'Romance,Action,Comedy',NULL,NULL
+EXEC member_filter_artikel 'Romance,Action,Comedy',NULL,NULL
 
 SELECT *
 FROM Artikel

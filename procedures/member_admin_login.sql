@@ -1,3 +1,5 @@
+/*log in baik ke akun member maupun admin*/
+
 GO
 USE Perpustakaan
 

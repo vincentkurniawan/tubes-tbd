@@ -1,14 +1,12 @@
 /**
-- Admin_Validasi_Artikel_Baru 
-param : id_artikel yang divalidasi, id_admin, status_validasi yang diterima dari interface (bayangin aja ada)
-todo  : cari artikel berdasarkan id yang dimaksud, update value id admin & status validasinya berdasarkan parameter yg diterima.
-return: -
+admin mengupdate status validasi pada suatu artikel terpilih 
 **/
+
 GO
 USE Perpustakaan
 
 GO
-CREATE PROCEDURE validasi_artikel_baru(
+CREATE PROCEDURE admin_validasi_artikel_baru(
 	@id_artikel INT,
 	@id_admin INT,
 	@status_validasi INT

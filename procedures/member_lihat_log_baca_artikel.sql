@@ -1,3 +1,8 @@
+/*
+member dapat melihat history log artikel yang sudah pernah dibaca
+return tabel daftar artikel yang sudah pernah dibaca
+*/
+
 GO
 USE Perpustakaan
 

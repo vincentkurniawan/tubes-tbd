@@ -1,6 +1,4 @@
-/**
-lihat seluruh daftar artikel yang tersedia
-**/
+/*lihat seluruh daftar artikel yang tersedia*/
 
 GO
 USE Perpustakaan

@@ -1,11 +1,7 @@
-/**
-- Member_Transaksi_Keanggotaan
-param : id_member, id_keanggotaan, tanggal_transaksi
-todo  : insert ke tabel Transaksi, dengan id admin yg memvalidasi di set default 0 (nantinya akan diupdate saat divalidasi) dan status validasi = 0. 
-return: -
-**note : tabel ini akan terlihat tidak normal krn mencatat harga yg dibayarkan ,
-tapi akan mempercepat operasi analisis (jadi gabutuh join" lagi buat cek harga keanggotaannya)
-**/
+/*
+memasukan data transaksi yang dilakukan oleh member saat membeli keanggotaan
+*/
+
 GO
 USE Perpustakaan
 

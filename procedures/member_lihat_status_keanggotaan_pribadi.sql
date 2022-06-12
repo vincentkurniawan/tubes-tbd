@@ -1,3 +1,8 @@
+/*
+member dapat melihat status keanggotaannya saat ini
+return status keanggotaan member tsb
+*/
+
 GO
 USE Perpustakaan
 

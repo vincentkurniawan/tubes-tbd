@@ -1,7 +1,5 @@
---Member_Register 
---param : uname, pass, nama, email, no telp, alamat, kota. 
---todo  : cek apakah uname, email sdh prnh digunakan sblmnya. if belum pernah, insert data ke tabel Pengguna lalu ke tabel Member baru 
---return: true (0) jika blm prnh digunakan, false (1) jika sudah.
+/*memasukan data member baru melalui fitur register*/
+
 GO
 USE Perpustakaan
 
