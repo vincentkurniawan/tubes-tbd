@@ -15,6 +15,11 @@ CREATE FUNCTION validate_user_pass (@username VARCHAR(255), @pass VARCHAR(255))
         END
 
 GO
+--jika ditemukan id user dengan pass yang sesuai, maka akan mengembalikan dua kolom, yaitu id_admin dan id_member
+--salah satu kolom akan bernilai NULL sesuai dengan privileges yang dimiliki id tersebut
+--misal jika id tersebut adalah id admin, maka id_admin akan terisi dan value dari kolom id_member akan bernilai null
+
+--namun jika tidak ditemukan, SP tidak akan mengembalikan apapun (return 0)
 CREATE PROCEDURE member_admin_login (@username VARCHAR(255), @pass VARCHAR(255)) 
 AS
     IF (dbo.validate_user_pass(@username, @pass) = 0) BEGIN
