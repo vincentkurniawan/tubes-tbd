@@ -2,13 +2,15 @@ IF NOT EXISTS (SELECT * FROM sys.databases WHERE name = 'Perpustakaan')
 BEGIN
   CREATE DATABASE Perpustakaan;
 END
-GO
-USE master;
-ALTER DATABASE [Perpustakaan] SET SINGLE_USER WITH ROLLBACK IMMEDIATE;
-DROP DATABASE [Perpustakaan] ;
-CREATE DATABASE Perpustakaan;
-USE Perpustakaan;
+ELSE BEGIN
+	USE master;
+	ALTER DATABASE [Perpustakaan] SET SINGLE_USER WITH ROLLBACK IMMEDIATE;
+	DROP DATABASE [Perpustakaan] ;
+	CREATE DATABASE Perpustakaan;
+	USE Perpustakaan;
+END
 
+GO
 DROP TABLE Artikel_Kategori, Transaksi_Keanggotaan, Membaca, Favorit, Review, Artikel, Kategori, Member, Keanggotaan, Administrator, Pengguna, Kota, Negara
 
 IF NOT EXISTS (SELECT * FROM sys.tables WHERE name = 'Negara')
@@ -37,7 +39,7 @@ BEGIN
 	 CREATE TABLE Pengguna
 	 (
 		  id_pengguna INT NOT NULL IDENTITY(1,1) PRIMARY KEY,
-		  username VARCHAR (255) NOT NULL,
+		  username VARCHAR (255) NOT NULL UNIQUE,
 		  pass VARCHAR (255) NOT NULL
 	 )
 END
@@ -171,4 +173,3 @@ BEGIN
 		  id_kategori INT FOREIGN KEY REFERENCES Kategori(id_kategori)
 	 )
 END
-GO
